@@ -4,7 +4,7 @@
     
         :root {
             /* ── Kern-Tokens (aus Canva-Palette) ── */
-            --bg:#F9F9FF; --bg2:#F1F3CE; --white:#ffffff; --text:#2F2F28; --muted:#785A46; --border:#D5C9B1;
+            --bg:#F9F9FF; --bg2:#F5F0EB; /* Warm Linen — ersetzt Ivory #F1F3CE */ --white:#ffffff; --text:#2F2F28; --muted:#785A46; --border:#D5C9B1;
             --danger:#ED5752; --danger-banner:#6B1D1D; --warning:#EB8A3E; --safe:#A1BE95; --info:#1E656D;
             --m1:#D24136; --m2:#1E656D; --m3:#EB8A3E; --m4:#92AAC7; --m5:#A1BE95; --m6:#785A46;
 
