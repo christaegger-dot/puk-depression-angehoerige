@@ -1,0 +1,77 @@
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/og-image.png"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/*.pdf"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/style.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[headers]]
+  for = "/app.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
+
+[[redirects]]
+  from = "/m1"
+  to = "/m1.html"
+  status = 301
+
+[[redirects]]
+  from = "/m2"
+  to = "/m2.html"
+  status = 301
+
+[[redirects]]
+  from = "/m3"
+  to = "/m3.html"
+  status = 301
+
+[[redirects]]
+  from = "/m4"
+  to = "/m4.html"
+  status = 301
+
+[[redirects]]
+  from = "/m5"
+  to = "/m5.html"
+  status = 301
+
+[[redirects]]
+  from = "/m6"
+  to = "/m6.html"
+  status = 301
+
+# Custom 404-Fehlerseite
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404

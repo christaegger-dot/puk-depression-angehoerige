@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seite nicht gefunden | PUK Zürich</title>
+    <meta name="robots" content="noindex">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @font-face { font-family:'Lora'; font-style:normal; font-weight:400; font-display:swap; src:url('fonts/lora-v37-latin-regular.woff2') format('woff2'); }
+        @font-face { font-family:'Lora'; font-style:normal; font-weight:600; font-display:swap; src:url('fonts/lora-v37-latin-600.woff2') format('woff2'); }
+        @font-face { font-family:'Source Sans 3'; font-style:normal; font-weight:400; font-display:swap; src:url('fonts/source-sans-3-v19-latin-regular.woff2') format('woff2'); }
+        @font-face { font-family:'Source Sans 3'; font-style:normal; font-weight:600; font-display:swap; src:url('fonts/source-sans-3-v19-latin-600.woff2') format('woff2'); }
+
+        .error-page {
+            min-height: 60vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+        .error-code {
+            font-family: 'Lora', Georgia, serif;
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 600;
+            color: var(--m1, #D24136);
+            opacity: .25;
+            line-height: 1;
+            margin-bottom: .5rem;
+        }
+        .error-title {
+            font-family: 'Lora', Georgia, serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            font-weight: 600;
+            margin-bottom: .8rem;
+        }
+        .error-text {
+            max-width: 480px;
+            color: #666;
+            font-size: .95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        .error-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .8rem;
+            justify-content: center;
+        }
+        .error-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            padding: .65rem 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: .9rem;
+            transition: .2s;
+        }
+        .error-links a.primary {
+            background: var(--primary, #1E656D);
+            color: #fff;
+        }
+        .error-links a.primary:hover {
+            opacity: .9;
+            transform: translateY(-1px);
+        }
+        .error-links a.secondary {
+            background: rgba(0,0,0,.05);
+            color: #333;
+        }
+        .error-links a.secondary:hover {
+            background: rgba(0,0,0,.08);
+        }
+        .error-modules {
+            margin-top: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            justify-content: center;
+        }
+        .error-modules a {
+            padding: .4rem .8rem;
+            border-radius: 6px;
+            font-size: .82rem;
+            text-decoration: none;
+            font-weight: 500;
+            background: rgba(0,0,0,.04);
+            color: #555;
+            transition: .2s;
+        }
+        .error-modules a:hover {
+            background: rgba(0,0,0,.08);
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Zum Inhalt springen</a>
+
+<div class="notfall-banner" aria-label="Notfall-Informationen" role="region">
+    <div class="notfall-banner-inner">
+        <span>🚨 Akute Gefahr?</span>
+        <a href="tel:117" style="color:#fff;font-weight:600;margin:0 .5rem;">117</a> Polizei |
+        <a href="tel:144" style="color:#fff;font-weight:600;margin:0 .5rem;">144</a> Sanität |
+        <a href="tel:143" style="color:#fff;font-weight:600;margin:0 .5rem;">143</a> Dargebotene Hand
+    </div>
+</div>
+
+<nav class="main-nav" aria-label="Hauptnavigation">
+    <div class="nav-inner">
+        <a href="index.html" class="nav-logo">PUK Zürich — Depression &amp; Angehörige</a>
+        <ul class="nav-links" role="list">
+            <li><a href="m1.html" title="Was ist Depression?">M1</a></li>
+            <li><a href="m2.html" title="Kommunikation">M2</a></li>
+            <li><a href="m3.html" title="Beziehung">M3</a></li>
+            <li><a href="m4.html" title="Komorbiditäten">M4</a></li>
+            <li><a href="m5.html" title="Selbstsorge">M5</a></li>
+            <li><a href="m6.html" title="Ressourcen">M6</a></li>
+        </ul>
+        <button class="hamburger" id="hamburger-btn" aria-label="Navigation öffnen" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <ul role="list">
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="m1.html">Was ist Depression?</a></li>
+            <li><a href="m2.html">Kommunikation</a></li>
+            <li><a href="m3.html">Beziehung</a></li>
+            <li><a href="m4.html">Komorbiditäten</a></li>
+            <li><a href="m5.html">Selbstsorge</a></li>
+            <li><a href="m6.html">Ressourcen</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main id="main-content">
+    <div class="error-page">
+        <div class="error-code" aria-hidden="true">404</div>
+        <h1 class="error-title">Diese Seite gibt es leider nicht</h1>
+        <p class="error-text">
+            Möglicherweise hat sich die Adresse geändert oder die Seite wurde entfernt.
+            Keine Sorge — Sie finden alle Inhalte über die Navigation oder die Startseite.
+        </p>
+        <div class="error-links">
+            <a href="index.html" class="primary">← Zur Startseite</a>
+            <a href="m6.html" class="secondary">Hilfe &amp; Ressourcen</a>
+        </div>
+        <nav class="error-modules" aria-label="Direkt zu den Modulen">
+            <a href="m1.html">M1 · Depression verstehen</a>
+            <a href="m2.html">M2 · Kommunikation</a>
+            <a href="m3.html">M3 · Beziehung</a>
+            <a href="m4.html">M4 · Komorbiditäten</a>
+            <a href="m5.html">M5 · Selbstsorge</a>
+            <a href="m6.html">M6 · Ressourcen</a>
+        </nav>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-links">
+            <a href="https://www.puk.zh.ch" target="_blank" rel="noopener">PUK Zürich</a>
+            <a href="https://www.puk.zh.ch/angehoerige" target="_blank" rel="noopener">Angehörigenarbeit</a>
+        </div>
+        <p>Diese Website wurde von der Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK) erstellt.</p>
+        <p style="margin-top:.5rem;font-size:.8rem;">© 2025 Psychiatrische Universitätsklinik Zürich · <a href="https://www.puk.zh.ch" target="_blank" rel="noopener">puk.zh.ch</a></p>
+    </div>
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
