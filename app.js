@@ -20,8 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
         ['FontControls', initFontControls],
         ['BackToTop',    initBackToTop],
         ['Barometer',    initBarometer],
-        ['NavHighlight', initNavHighlight],
-        ['KriseCta',     initKriseCta],
+        ['NavHighlight',    initNavHighlight],
+        ['KriseCta',        initKriseCta],
+        ['BarometerReset',  initBarometerReset],
     ];
     modules.forEach(([name, fn]) => {
         try { fn(); }
@@ -294,6 +295,40 @@ function evalBarometer() {
 
     // SR-Feedback
     announceToSR(result.textContent);
+
+    // Reset-Button einblenden, Submit-Button ausblenden
+    const resetBtn = document.getElementById('barometer-reset-btn');
+    const submitBtn = document.getElementById('barometer-submit-btn');
+    if (resetBtn) resetBtn.style.display = '';
+    if (submitBtn) submitBtn.style.display = 'none';
+}
+
+/* ---- Belastungs-Barometer Reset ---- */
+function initBarometerReset() {
+    const resetBtn = document.getElementById('barometer-reset-btn');
+    const submitBtn = document.getElementById('barometer-submit-btn');
+    const result = document.getElementById('barometer-result');
+    if (!resetBtn) return;
+    resetBtn.addEventListener('click', () => {
+        // Slider auf 5 zurücksetzen
+        ['bar1','bar2','bar3'].forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+                el.value = 5;
+                const display = el.nextElementSibling;
+                if (display) display.textContent = '5';
+            }
+        });
+        // Ergebnis ausblenden
+        if (result) {
+            result.className = 'barometer-result';
+            result.innerHTML = '';
+        }
+        // Reset-Button verstecken, Submit-Button zeigen
+        resetBtn.style.display = 'none';
+        if (submitBtn) submitBtn.style.display = '';
+        announceToSR('Assessment zurückgesetzt. Bitte füllen Sie die Schieberegler erneut aus.');
+    });
 }
 
 /* ---- Aktive Navigation hervorheben ---- */

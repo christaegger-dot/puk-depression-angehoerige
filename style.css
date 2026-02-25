@@ -89,6 +89,9 @@
         .triage-option{display:flex;align-items:flex-start;gap:.75rem;padding:1rem 1.2rem;background:var(--bg2);border:1.5px solid var(--border);border-radius:var(--radius);text-decoration:none;color:var(--text);transition:border-color .2s,transform .15s,box-shadow .2s;cursor:pointer;}
         .triage-option:hover,.triage-option:focus{border-color:var(--m1);transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,.06);}
         .triage-option:focus{outline:2px solid var(--info);outline-offset:2px;}
+        .triage-option--urgent{border-color:var(--danger);background:rgba(237,87,82,.07);}
+        .triage-option--urgent:hover,.triage-option--urgent:focus{border-color:var(--danger);box-shadow:0 4px 12px rgba(237,87,82,.15);}
+        .triage-option--urgent .triage-label{color:var(--danger);}
         .triage-emoji{font-size:1.5rem;flex-shrink:0;margin-top:.1rem;}
         .triage-label{font-weight:600;font-size:.95rem;display:block;margin-bottom:.15rem;}
         .triage-desc{font-size:.85rem;color:var(--muted);line-height:1.45;}

@@ -38,6 +38,7 @@
             <div class="notfall-extra">
                 <p>Psychiatrische Krise (Zürich): <a href="tel:0800336655">0800 33 66 55</a> (Psychiatrischer Notfalldienst, kostenlos)</p>
                 <p>Kriseninterventionszentrum PUK: <a href="tel:0583846500">058 384 65 00</a></p>
+                <p style="margin-top:.75rem;"><strong>Sorgen um Suizid?</strong> Wenn Sie befürchten, dass sich Ihr Angehöriger etwas antun könnte: <a href="m2.html#m2-3" style="color:#fff;text-decoration:underline;">Lesen Sie, wie Sie das Thema ansprechen können →</a></p>
                 <p style="margin-top:.5rem;font-size:.82rem;color:rgba(255,255,255,.85);">Sie können einfach sagen: «Ich bin Angehörige*r und ich mache mir Sorgen um jemanden.» — Das reicht.</p>
             </div>
         </details>
@@ -49,12 +50,12 @@
     <div class="nav-inner">
         <a href="index.html" class="nav-logo">PUK Zürich — Depression &amp; Angehörige</a>
         <ul class="nav-links" role="list">
-            <li><a href="m1.html" title="Was ist Depression?">M1</a></li>
-<li><a href="m2.html" title="Kommunikation">M2</a></li>
-<li><a href="m3.html" title="Beziehung">M3</a></li>
-<li><a href="m4.html" title="Komorbiditäten">M4</a></li>
-<li><a href="m5.html" title="Selbstsorge">M5</a></li>
-<li><a href="m6.html" title="Ressourcen">M6</a></li>
+            <li><a href="m1.html">Depression</a></li>
+<li><a href="m2.html">Kommunikation</a></li>
+<li><a href="m3.html">Beziehung</a></li>
+<li><a href="m4.html">Begleiterkrankungen</a></li>
+<li><a href="m5.html">Selbstsorge</a></li>
+<li><a href="m6.html">Hilfe finden</a></li>
 
         </ul>
         <div class="nav-controls" style="display:flex;gap:.4rem;align-items:center;">
@@ -68,7 +69,7 @@
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
         <ul role="list">
             <li><a href="index.html">Startseite</a></li>
-            <li><a href="m1.html">Was ist Depression?</a></li><li><a href="m2.html">Kommunikation</a></li><li><a href="m3.html">Beziehung</a></li><li><a href="m4.html">Komorbiditäten</a></li><li><a href="m5.html">Selbstsorge</a></li><li><a href="m6.html">Ressourcen</a></li>
+            <li><a href="m1.html">Depression</a></li><li><a href="m2.html">Kommunikation</a></li><li><a href="m3.html">Beziehung</a></li><li><a href="m4.html">Begleiterkrankungen</a></li><li><a href="m5.html">Selbstsorge</a></li><li><a href="m6.html">Hilfe finden</a></li>
         </ul>
     </div>
 </nav>
@@ -76,12 +77,7 @@
 <div class="home-hero">
     <h1>Depression verstehen<br>und begleiten</h1>
     <p class="subtitle">Evidenzbasierte Informationen für Angehörige — Partner*in, Elternteil, erwachsenes Kind oder Geschwister.</p>
-    <div class="hero-tags">
-        <span class="hero-tag">Evidenzbasiert</span>
-        <span class="hero-tag">Für Angehörige</span>
-        <span class="hero-tag">PUK Zürich</span>
-        <span class="hero-tag">6 Module</span>
-    </div>
+
 </div>
 
 <div class="section-divider">
@@ -106,6 +102,13 @@
                 <span class="triage-desc">Sie suchen konkrete Worte und Gesprächsstrategien für schwierige Momente.</span>
             </div>
         </a>
+        <a href="m3.html" class="triage-option">
+            <span class="triage-emoji" aria-hidden="true">💔</span>
+            <div>
+                <span class="triage-label">Unsere Beziehung leidet</span>
+                <span class="triage-desc">Die Depression verändert Ihre Partnerschaft oder Familie — und Sie wissen nicht, wie Sie damit umgehen sollen.</span>
+            </div>
+        </a>
         <a href="m5.html" class="triage-option">
             <span class="triage-emoji" aria-hidden="true">😔</span>
             <div>
@@ -118,6 +121,13 @@
             <div>
                 <span class="triage-label">Ich suche konkrete Hilfe</span>
                 <span class="triage-desc">Sie möchten wissen, wohin Sie sich wenden können — für Ihren Angehörigen und für sich.</span>
+            </div>
+        </a>
+        <a href="m2.html#m2-3" class="triage-option triage-option--urgent">
+            <span class="triage-emoji" aria-hidden="true">⚠️</span>
+            <div>
+                <span class="triage-label">Ich mache mir Sorgen um Suizid</span>
+                <span class="triage-desc">Sie haben Angst, dass Ihr Angehöriger sich etwas antun könnte — und wissen nicht, was Sie tun sollen.</span>
             </div>
         </a>
     </div>
@@ -207,6 +217,7 @@
             </div>
             <div class="barometer-result" id="barometer-result"></div>
             <button class="barometer-submit" id="barometer-submit-btn">Auswertung anzeigen</button>
+            <button class="barometer-reset" id="barometer-reset-btn" style="display:none;margin-top:.75rem;background:transparent;border:1.5px solid var(--text);color:var(--text);padding:.5rem 1.25rem;border-radius:6px;cursor:pointer;font-size:.9rem;" aria-label="Assessment zurücksetzen">↺ Nochmal ausfüllen</button>
         </form>
     </div>
 
@@ -221,8 +232,8 @@
         </div>
         <p>Diese Website wurde von der Fachstelle Angehörigenarbeit der Psychiatrischen Universitätsklinik Zürich (PUK) erstellt. Sie dient der Psychoedukation und ersetzt keine professionelle Beratung oder Behandlung.</p>
         <p style="margin-top:.5rem;">Alle Vignetten und Erfahrungsberichte sind anonymisiert. Ähnlichkeiten mit realen Personen sind zufällig.</p>
-        <p style="margin-top:.5rem;font-size:.8rem;">© 2025 Psychiatrische Universitätsklinik Zürich · <a href="https://www.pukzh.ch" target="_blank" rel="noopener">puk.zh.ch</a></p>
-        <div class="footer-meta">Für Angehörige – Ch. Egger | Stand: 03.02.2026</div>
+        <p style="margin-top:.5rem;font-size:.8rem;">© 2025–2026 Psychiatrische Universitätsklinik Zürich · <a href="https://www.pukzh.ch" target="_blank" rel="noopener">puk.zh.ch</a></p>
+        <div class="footer-meta">Für Angehörige – Ch. Egger | Stand: 02.2026</div>
     </div>
 </footer>
 
