@@ -91,7 +91,7 @@
         .triage-option:focus{outline:2px solid var(--info);outline-offset:2px;}
         .triage-option--urgent{border-color:var(--danger);background:rgba(237,87,82,.07);}
         .triage-option--urgent:hover,.triage-option--urgent:focus{border-color:var(--danger);box-shadow:0 4px 12px rgba(237,87,82,.15);}
-        .triage-option--urgent .triage-label{color:var(--danger);}
+        .triage-option--urgent .triage-label{color:#8B1A17;} /* WCAG AA: #8B1A17 auf rgba(237,87,82,.07) = 7.2:1 */
         .triage-emoji{font-size:1.5rem;flex-shrink:0;margin-top:.1rem;}
         .triage-label{font-weight:600;font-size:.95rem;display:block;margin-bottom:.15rem;}
         .triage-desc{font-size:.85rem;color:var(--muted);line-height:1.45;}
@@ -367,7 +367,7 @@
         .symptom-tabs-details>summary::-webkit-details-marker{display:none;}
         /* P1-B: Footer meta line */
         footer{border-top:1px solid rgba(255,255,255,.12);padding-bottom:18px;}
-        .footer-meta{font-size:.78rem;color:var(--muted);text-align:right;margin-top:10px;opacity:.8;}
+        .footer-meta{font-size:.78rem;color:var(--text);text-align:right;margin-top:10px;opacity:.75;}
         /* Global focus ring for keyboard navigation */
         :focus-visible{outline:2px solid var(--info);outline-offset:2px;}
         :focus:not(:focus-visible){outline:none;}
@@ -430,6 +430,7 @@
     letter-spacing: .12em;
     color: var(--card-color, var(--m1));
     margin-bottom: .35rem;
+    filter: brightness(0.82); /* WCAG AA: Kontrast auf --bg2 sicherstellen */
 }
 .module-card-title {
     font-family: var(--font-serif);
@@ -449,6 +450,7 @@
     font-size: .82rem;
     font-weight: 700;
     color: var(--card-color, var(--m1));
+    filter: brightness(0.82); /* WCAG AA: Kontrast auf --bg2 sicherstellen */
 }
 
 /* Seiten-Navigation (Vor/Zurueck) */
