@@ -38,7 +38,7 @@
         }
         .error-text {
             max-width: 480px;
-            color: #666;
+            color: var(--muted);
             font-size: .95rem;
             line-height: 1.6;
             margin-bottom: 1.5rem;
@@ -61,7 +61,7 @@
             transition: .2s;
         }
         .error-links a.primary {
-            background: var(--primary, #1E656D);
+            background: var(--info);
             color: #fff;
         }
         .error-links a.primary:hover {
@@ -69,11 +69,11 @@
             transform: translateY(-1px);
         }
         .error-links a.secondary {
-            background: rgba(0,0,0,.05);
-            color: #333;
+            background: var(--bg2);
+            color: var(--text);
         }
         .error-links a.secondary:hover {
-            background: rgba(0,0,0,.08);
+            background: var(--border);
         }
         .error-modules {
             margin-top: 2rem;
@@ -88,13 +88,13 @@
             font-size: .82rem;
             text-decoration: none;
             font-weight: 500;
-            background: rgba(0,0,0,.04);
-            color: #555;
+            background: var(--bg2);
+            color: var(--muted);
             transition: .2s;
         }
         .error-modules a:hover {
-            background: rgba(0,0,0,.08);
-            color: #222;
+            background: var(--border);
+            color: var(--text);
         }
     </style>
 </head>
@@ -137,12 +137,12 @@
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
         <ul role="list">
             <li><a href="index.html">Startseite</a></li>
-            <li><a href="m1.html">Was ist Depression?</a></li>
+            <li><a href="m1.html">Depression</a></li>
             <li><a href="m2.html">Kommunikation</a></li>
             <li><a href="m3.html">Beziehung</a></li>
             <li><a href="m4.html">Begleiterkrankungen</a></li>
             <li><a href="m5.html">Selbstsorge</a></li>
-            <li><a href="m6.html">Ressourcen</a></li>
+            <li><a href="m6.html">Hilfe finden</a></li>
         </ul>
     </div>
 </nav>

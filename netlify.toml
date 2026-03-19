@@ -70,6 +70,16 @@
   to = "/m6.html"
   status = 301
 
+[[redirects]]
+  from = "/m1b"
+  to = "/m1b.html"
+  status = 301
+
+[[redirects]]
+  from = "/krisenplan"
+  to = "/krisenplan.html"
+  status = 301
+
 # Custom 404-Fehlerseite
 [[redirects]]
   from = "/*"

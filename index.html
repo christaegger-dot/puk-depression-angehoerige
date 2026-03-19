@@ -59,7 +59,7 @@
 <li><a href="m6.html">Hilfe finden</a></li>
 
         </ul>
-        <div class="nav-controls" style="display:flex;gap:.4rem;align-items:center;">
+        <div class="nav-controls">
             <button class="font-toggle" id="font-smaller" aria-label="A− Schrift kleiner" title="Schrift kleiner">A−</button>
             <button class="font-toggle" id="font-larger" aria-label="A+ Schrift grösser" title="Schrift grösser">A+</button>
         </div>
@@ -189,7 +189,7 @@
         <p class="barometer-title">Wie geht es Ihnen gerade?</p>
         <p class="barometer-subtitle">Dieses kurze Selbst-Assessment hilft Ihnen, Ihre aktuelle Belastung einzuschätzen. Es dauert weniger als eine Minute.</p>
         <p class="barometer-privacy">Ihre Antworten bleiben auf diesem Gerät. Es werden keine Daten gespeichert oder übertragen. Der Test dient der Orientierung und ersetzt keine fachliche Abklärung.</p>
-        <form id="barometer-form" onsubmit="return false;">
+        <form id="barometer-form">
             <div class="barometer-items">
                 <div class="barometer-item">
                     <label for="bar1">Wie erschöpft fühlen Sie sich aktuell?</label>
@@ -238,7 +238,7 @@
     </div>
 </footer>
 
-    <button id="back-to-top" aria-label="Nach oben scrollen" style="position:fixed;bottom:1.5rem;left:1.5rem;width:44px;height:44px;border-radius:50%;background:var(--module-color,var(--m1));color:#fff;border:none;cursor:pointer;font-size:1.2rem;display:none;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:700;" aria-hidden="true">&#8593;</button>
+    <button id="back-to-top" aria-label="Nach oben scrollen" aria-hidden="true">&#8593;</button>
     <script src="app.js"></script>
 </body>
 </html>
