@@ -80,6 +80,11 @@
   to = "/krisenplan.html"
   status = 301
 
+[[redirects]]
+  from = "/zusammenfassung"
+  to = "/zusammenfassung.html"
+  status = 301
+
 # Custom 404-Fehlerseite
 [[redirects]]
   from = "/*"

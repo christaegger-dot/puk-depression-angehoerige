@@ -301,7 +301,7 @@ function getEmpfehlung(erschoepft, sorgen, selbstsorge) {
             links: [{href:'m5.html',label:'Modul: Selbstsorge →'},{href:'m3.html#m3-3',label:'Grenzen setzen →'}]
         });
     }
-    if (total <= 12) {
+    if (total <= 12 && empfehlungen.length === 0) {
         empfehlungen.push({
             icon: '📘', title: 'Ein guter Moment, sich zu informieren.',
             text: 'Sie scheinen noch Ressourcen zu haben. Nutzen Sie diese Phase, um sich Wissen aufzubauen — das hilft, wenn es schwieriger wird.',
