@@ -113,7 +113,9 @@
     <p class="module-toc-title">In diesem Modul:</p>
     <ol>
         <li><a href="#m1-1">Keine Faulheit, keine Schwäche</a></li>
+        <li><a href="#m1-1b">Warum entsteht eine Depression?</a></li>
         <li><a href="#m1-2">Warum verhält sich mein Angehöriger so?</a></li>
+        <li><a href="#m1-2b">Depression bei Männern — oft anders, oft übersehen</a></li>
         <li><a href="#m1-3">Verlauf, Phasen und Behandlung</a></li>
     </ol>
 </nav>
@@ -202,6 +204,52 @@
     </div>
 
     <div class="module-section">
+        <h3 id="m1-1b">Warum entsteht eine Depression?</h3>
+
+        <p>Viele Angehörige fragen sich: Warum gerade mein Partner, meine Mutter, mein Bruder? Die Antwort ist: Depression entsteht nie aus einem einzigen Grund. Das hilfreichste Modell, um es zu verstehen, ist das <strong>Vulnerabilitäts-Stress-Modell</strong>.</p>
+
+        <p>Stellen Sie sich ein Fass vor. Jeder Mensch hat ein Fass — es steht für die Belastbarkeit. Manche Fässer sind von Geburt an kleiner (genetische Veranlagung, frühe Erfahrungen). Das Fass füllt sich durch Stress: Konflikte, Verluste, Überlastung, Einsamkeit. Solange das Fass nicht überläuft, bleibt der Mensch gesund. Wenn es überläuft, kann eine Depression entstehen.</p>
+
+        <!-- INTERAKTIV: Fass-Modell mit Slider -->
+        <div style="background:#f7f5f2;border:1px solid var(--border,#e2e0dc);border-radius:12px;padding:1.5rem;margin:1.5rem 0;">
+            <p style="font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--m1);margin-bottom:.75rem;">Interaktiv: Das Fass-Modell</p>
+            <div style="display:flex;align-items:flex-end;gap:2rem;flex-wrap:wrap;justify-content:center;">
+                <div style="position:relative;width:120px;height:180px;border:3px solid #5a7a9a;border-top:none;border-radius:0 0 12px 12px;overflow:hidden;background:#fff;">
+                    <div id="fass-fill" style="position:absolute;bottom:0;width:100%;height:30%;background:linear-gradient(to top,#3a8fd4,#7ab8e8);transition:height .5s ease;border-radius:0 0 9px 9px;"></div>
+                    <div id="fass-overflow" style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);font-size:1.2rem;opacity:0;transition:opacity .3s;">💧</div>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:.7rem;font-weight:600;color:#1a3a5a;text-align:center;z-index:2;pointer-events:none;" id="fass-label">Belastung</div>
+                </div>
+                <div style="flex:1;min-width:200px;">
+                    <label style="font-size:.85rem;font-weight:600;color:#5a7a9a;">Stresslevel verschieben:</label>
+                    <input type="range" min="0" max="100" value="30" id="fass-slider" style="width:100%;margin:.5rem 0;accent-color:var(--m1);">
+                    <div style="display:flex;justify-content:space-between;font-size:.75rem;color:#8a8a8a;">
+                        <span>Wenig Stress</span><span>Viel Stress</span>
+                    </div>
+                    <p id="fass-text" style="font-size:.88rem;margin-top:.75rem;line-height:1.5;min-height:3rem;color:var(--text);">Das Fass ist noch nicht voll. Ihr Angehöriger kann die Belastungen bewältigen.</p>
+                </div>
+            </div>
+            <script>
+            (function(){
+                var slider=document.getElementById('fass-slider'),fill=document.getElementById('fass-fill'),text=document.getElementById('fass-text'),overflow=document.getElementById('fass-overflow'),label=document.getElementById('fass-label');
+                if(!slider)return;
+                slider.addEventListener('input',function(){
+                    var v=parseInt(this.value);
+                    fill.style.height=Math.min(v,100)+'%';
+                    overflow.style.opacity=v>85?'1':'0';
+                    if(v<40){text.textContent='Das Fass ist noch nicht voll. Ihr Angehöriger kann die Belastungen bewältigen.';fill.style.background='linear-gradient(to top,#3a8fd4,#7ab8e8)';label.textContent='Belastung';}
+                    else if(v<70){text.textContent='Das Fass füllt sich. Risikofaktoren wie Konflikte, Schlafmangel oder Isolation kommen hinzu. Schutzfaktoren — soziale Kontakte, Bewegung, Therapie — können das Fass entlasten.';fill.style.background='linear-gradient(to top,#d4953a,#e8c87a)';label.textContent='Belastung steigt';}
+                    else if(v<90){text.textContent='Das Fass ist fast voll. Frühwarnzeichen zeigen sich: Rückzug, Schlafstörungen, Reizbarkeit. Jetzt ist der Moment, Hilfe zu suchen — bevor es überläuft.';fill.style.background='linear-gradient(to top,#d4633a,#e89a7a)';label.textContent='Kritisch';}
+                    else{text.textContent='Das Fass läuft über. Depression entsteht. Das ist keine Schwäche — es bedeutet, dass die Belastung die Kapazität überschritten hat. Behandlung kann das Fass wieder entlasten.';fill.style.background='linear-gradient(to top,#c05050,#e07070)';label.textContent='Überlauf';}
+                });
+            })();
+            </script>
+            <p style="font-size:.8rem;color:#999;margin-top:.75rem;">Das Fass-Modell veranschaulicht das Vulnerabilitäts-Stress-Modell (Zubin & Spring, 1977). Es zeigt: Depression entsteht, wenn die Belastung die individuelle Belastbarkeit übersteigt. Beides — die Grösse des Fasses und die Menge an Stress — lässt sich beeinflussen.</p>
+        </div>
+
+        <p><strong>Was bedeutet das für Sie?</strong> Niemand ist «schuld» an der Depression — weder Sie noch Ihr Angehöriger. Depression entsteht durch ein Zusammenspiel von Verletzlichkeit und Belastung. Und: Sowohl die Verletzlichkeit als auch die Belastungen lassen sich durch Behandlung, Unterstützung und veränderte Lebensumstände beeinflussen.</p>
+    </div>
+
+    <div class="module-section">
         <h3 id="m1-2">Warum verhält sich mein Angehöriger so?</h3>
         <p>Viele Angehörige sind verwirrt oder verletzt, wenn die betroffene Person sich zurückzieht, gereizt reagiert oder scheinbar keine Anstrengung unternimmt. Das ist verständlich. Aber: Dieses Verhalten ist ein Symptom der Erkrankung, keine Aussage über die Beziehung zu Ihnen.</p>
         <p>Depression verändert die Art, wie das Gehirn Informationen verarbeitet. Betroffene sehen die Welt durch einen «negativen Filter» — selbst positive Ereignisse werden als bedeutungslos oder belastend wahrgenommen [2].</p>
@@ -221,6 +269,47 @@
             <summary class="reflexion-trigger">Moment der Reflexion: Was verletzt mich — und was ist Symptom?</summary>
             <div class="reflexion-content">
                 <p>Denken Sie an einen Moment, in dem das Verhalten Ihres Angehörigen Sie verletzt oder verwirrt hat. Könnte dieses Verhalten ein Symptom der Erkrankung gewesen sein — und keine bewusste Entscheidung gegen Sie?</p>
+            </div>
+        </details>
+    </div>
+
+    <div class="module-section">
+        <h3 id="m1-2b">Depression bei Männern — oft anders, oft übersehen</h3>
+
+        <p>Depression wird oft mit Traurigkeit, Weinen und Rückzug assoziiert. Bei Männern zeigt sie sich aber häufig anders — und wird deshalb oft nicht erkannt, weder von den Betroffenen noch von ihren Angehörigen.</p>
+
+        <!-- INTERAKTIV: Vergleichs-Karten -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;" role="list">
+            <div style="background:#f0f4f8;border:1px solid #c8d8e8;border-radius:10px;padding:1.2rem;" role="listitem">
+                <p style="font-weight:700;font-size:.9rem;color:var(--m1);margin-bottom:.5rem;">«Typische» Symptome</p>
+                <p style="font-size:.85rem;color:#6a6a6a;margin-bottom:.5rem;">Werden oft erkannt:</p>
+                <ul style="font-size:.88rem;padding-left:1.1rem;margin:0;">
+                    <li>Anhaltende Traurigkeit, Weinen</li>
+                    <li>Rückzug und Isolation</li>
+                    <li>Erschöpfung und Antriebslosigkeit</li>
+                    <li>Offenes Ausdrücken von Hilflosigkeit</li>
+                    <li>Schlafstörungen (zu viel Schlaf)</li>
+                </ul>
+            </div>
+            <div style="background:#fff8f0;border:1px solid #e8d0b0;border-radius:10px;padding:1.2rem;" role="listitem">
+                <p style="font-weight:700;font-size:.9rem;color:#b8700b;margin-bottom:.5rem;">Häufig bei Männern</p>
+                <p style="font-size:.85rem;color:#6a6a6a;margin-bottom:.5rem;">Werden oft übersehen:</p>
+                <ul style="font-size:.88rem;padding-left:1.1rem;margin:0;">
+                    <li>Reizbarkeit, Wutausbrüche, Aggression</li>
+                    <li>Exzessives Arbeiten oder Sport</li>
+                    <li>Risikobereitschaft, rücksichtsloses Verhalten</li>
+                    <li>Vermehrter Alkohol- oder Substanzkonsum</li>
+                    <li>Körperliche Beschwerden (Rücken, Magen, Kopf)</li>
+                </ul>
+            </div>
+        </div>
+
+        <p>Viele Männer suchen später oder gar nicht Hilfe — Studien zeigen, dass Männer deutlich seltener eine Depression diagnostiziert bekommen, aber drei- bis viermal häufiger durch Suizid sterben als Frauen. Das liegt nicht an geringerem Leidensdruck, sondern daran, dass die Symptome anders aussehen und Männer seltener über seelische Not sprechen.</p>
+
+        <details class="reflexion">
+            <summary class="reflexion-trigger">Moment der Reflexion: Könnte das Depression sein?</summary>
+            <div class="reflexion-content">
+                <p>Ist Ihr Angehöriger in letzter Zeit auffallend gereizt, arbeitet exzessiv oder trinkt mehr als früher? Klagt er über körperliche Beschwerden, für die kein Arzt eine Ursache findet? Zieht er sich nicht zurück, sondern wird im Gegenteil rastloser? Wenn ja: Das könnte eine Depression sein, die sich anders zeigt als erwartet. Sprechen Sie es an — vorsichtig, ohne Diagnose: «Ich mache mir Sorgen, weil du anders bist als sonst.»</p>
             </div>
         </details>
     </div>
