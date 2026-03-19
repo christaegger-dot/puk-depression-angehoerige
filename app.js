@@ -62,11 +62,11 @@ function announceToSR(msg, priority = 'polite') {
     if (!el) {
         el = document.createElement('div');
         el.id = 'sr-announce';
-        el.setAttribute('aria-live', priority);
         el.setAttribute('aria-atomic', 'true');
         el.className = 'sr-only';
         document.body.appendChild(el);
     }
+    el.setAttribute('aria-live', priority);
     el.textContent = '';
     setTimeout(() => { el.textContent = msg; }, 100);
 }
@@ -88,9 +88,9 @@ function initMobileMenu() {
     if (!hamburger || !mobileMenu) return;
     hamburger.addEventListener('click', () => {
         const open = hamburger.classList.toggle('open');
-        hamburger.setAttribute('aria-expanded', open);
+        hamburger.setAttribute('aria-expanded', String(open));
         mobileMenu.classList.toggle('open', open);
-        mobileMenu.setAttribute('aria-hidden', !open);
+        mobileMenu.setAttribute('aria-hidden', String(!open));
     });
     mobileMenu.querySelectorAll('a').forEach(a => {
         a.addEventListener('click', () => {
@@ -184,7 +184,7 @@ function handleQuiz(btn) {
         feedback.textContent = 'Bitte wählen Sie eine Antwort aus.';
         feedback.className = 'quiz-feedback';
         feedback.setAttribute('role', 'alert');
-        btn.dataset.submitted = ''; // Erneuter Versuch erlaubt
+        delete btn.dataset.submitted; // Erneuter Versuch erlaubt
         return;
     }
 
@@ -246,6 +246,10 @@ function initBackToTop() {
 
 /* ---- Belastungs-Barometer (mit NaN-Schutz) ---- */
 function initBarometer() {
+    const form = document.getElementById('barometer-form');
+    if (form) {
+        form.addEventListener('submit', function(e) { e.preventDefault(); });
+    }
     // Schieberegler: Wert anzeigen
     document.querySelectorAll('.barometer-item input[type="range"]').forEach(r => {
         r.addEventListener('input', () => {
