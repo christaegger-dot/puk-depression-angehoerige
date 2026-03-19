@@ -15,6 +15,8 @@
     <meta name="theme-color" content="#F9F9FF" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#00293C" media="(prefers-color-scheme: dark)">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤝</text></svg>">
+    <link rel="preload" as="font" href="fonts/lora-v37-latin-regular.woff2" crossorigin>
+    <link rel="preload" as="font" href="fonts/source-sans-3-v19-latin-regular.woff2" crossorigin>
     <link rel="stylesheet" href="style.css">
     <style>
         @font-face { font-family:'Lora'; font-style:normal; font-weight:400; font-display:swap; src:url('fonts/lora-v37-latin-regular.woff2') format('woff2'); }
@@ -317,7 +319,7 @@
             </svg>
         </div>
         <p class="infografik-footer">Evidenz: Engel GL (1977) Science; AWMF-Leitlinie Depression S3 (2022) | Fachstelle Angehörigenarbeit PUK Zürich, Feb. 2026</p>
-        <p style="margin-top:.8rem;"><a href="puk-infografik-bio-psycho-sozial.pdf" download class="download-link" style="display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;background:var(--m1);color:#fff;border-radius:6px;text-decoration:none;font-size:.9rem;font-weight:500;transition:opacity .2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v9M4 8l4 4 4-4M2 14h12"/></svg>Infografik als PDF herunterladen (A4, druckfertig)</a></p>
+        <p style="margin-top:.8rem;"><a href="puk-infografik-bio-psycho-sozial.pdf" download class="download-link" style="display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;background:var(--m1);color:#fff;border-radius:6px;text-decoration:none;font-size:.9rem;font-weight:500;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v9M4 8l4 4 4-4M2 14h12"/></svg>Infografik als PDF herunterladen (A4, druckfertig)</a></p>
     </div>
 
     <!-- INFOGRAFIK 2: Teufelskreis der Depression -->
@@ -360,7 +362,7 @@
             </svg>
         </div>
         <p class="infografik-footer">Evidenz: Lewinsohn PM (1974) Verhaltenstherapie-Modell; Seligman MEP (1975) Erlernte Hilflosigkeit | Fachstelle Angehörigenarbeit PUK Zürich, Feb. 2026</p>
-        <p style="margin-top:.8rem;"><a href="puk-infografik-teufelskreis-final.pdf" download class="download-link" style="display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;background:var(--m1, #6a8e6a);color:#fff;border-radius:6px;text-decoration:none;font-size:.9rem;font-weight:500;transition:opacity .2s;" onmouseover="this.style.opacity='0.85'" onmouseout="this.style.opacity='1'"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v9M4 8l4 4 4-4M2 14h12"/></svg>Infografik als PDF herunterladen (A4, druckfertig)</a></p>
+        <p style="margin-top:.8rem;"><a href="puk-infografik-teufelskreis-final.pdf" download class="download-link" style="display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;background:var(--m1, #6a8e6a);color:#fff;border-radius:6px;text-decoration:none;font-size:.9rem;font-weight:500;"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v9M4 8l4 4 4-4M2 14h12"/></svg>Infografik als PDF herunterladen (A4, druckfertig)</a></p>
     </div>
 </details>
 
@@ -409,6 +411,6 @@
 
 
     <button id="back-to-top" aria-label="Nach oben scrollen" style="position:fixed;bottom:1.5rem;left:1.5rem;width:44px;height:44px;border-radius:50%;background:var(--module-color,var(--m1));color:#fff;border:none;cursor:pointer;font-size:1.2rem;display:none;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:700;" aria-hidden="true">&#8593;</button>
-    <script src="app.js"></script>
+    <script src="app.js" defer></script>
 </body>
 </html>
