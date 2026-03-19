@@ -106,6 +106,7 @@
             <span class="icon icon-xl" aria-hidden="true"><svg><use href="#icon-chat"/></svg></span>
             <h1 class="module-title">Wie kommuniziere ich mit jemandem, der depressiv ist?</h1>
         </div>
+        <p style="font-size:.82rem;color:#8a8a8a;margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> Lesezeit: ca. 10 Minuten · oder <a href="#kurzfassung" style="color:inherit;text-decoration:underline;">nur die Kurzfassung</a></p>
         <p class="module-intro">Kommunikation mit einem depressiven Menschen ist schwierig — nicht weil Sie etwas falsch machen, sondern weil die Erkrankung die Kommunikation verändert. Dieses Modul gibt Ihnen konkrete Werkzeuge an die Hand.</p>
         <!-- Kurzfassung M2 -->
         
@@ -117,7 +118,7 @@
         <li><a href="#m2-3">Das Thema Suizid ansprechen</a></li>
     </ol>
 </nav>
-<div class="kurzfassung">
+<div class="kurzfassung" id="kurzfassung">
             <p class="kurzfassung-label">In 30 Sekunden — das Wichtigste</p>
             <ul>
                 <li>Depressive Menschen ziehen sich zurück — das ist Symptom, nicht Ablehnung.</li>
@@ -186,7 +187,7 @@
         <div class="dialog-box" style="--module-color:var(--m2);">
             <h4>Situation 4: Ihr Angehöriger ist gereizt und angreifend</h4>
             <div class="dialog-line"><span class="dialog-who">Sie:</span><span class="dialog-text">«Ich merke, dass du gerade sehr angespannt bist. Ich gehe kurz raus und komme später wieder. Ich bin nicht böse auf dich.»</span></div>
-            <div class="dialog-line"><span class="dialog-who">Tipp:</span><span class="dialog-text">Reizbarkeit ist ein häufiges Depressionssymptom. Sich kurz zu entfernen ist kein Versagen — es schützt die Beziehung.</span></div>
+            <div class="dialog-line"><span class="dialog-who">Tipp:</span><span class="dialog-text">Reizbarkeit ist ein häufiges Depressionssymptom. Sich kurz zu entfernen ist kein Versagen — es schützt die Beziehung. Besonders bei Männern zeigt sich Depression oft durch Reizbarkeit — <a href="m1.html#m1-2b" style="color:var(--m2);">mehr dazu in Modul 1</a>.</span></div>
         </div>
     </div>
 
@@ -364,6 +365,17 @@
 
 
     <button id="back-to-top" aria-label="Nach oben scrollen" style="position:fixed;bottom:1.5rem;left:1.5rem;width:44px;height:44px;border-radius:50%;background:var(--module-color,var(--m1));color:#fff;border:none;cursor:pointer;font-size:1.2rem;display:none;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:700;" aria-hidden="true">&#8593;</button>
+    <!-- Floating Notfall-Button -->
+    <div id="notfall-fab" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:900;">
+        <button onclick="document.getElementById('notfall-panel').classList.toggle('nf-open')" style="width:52px;height:52px;border-radius:50%;background:#c62828;color:#fff;border:none;cursor:pointer;font-size:1.4rem;box-shadow:0 4px 16px rgba(198,40,40,.4);display:flex;align-items:center;justify-content:center;transition:transform .15s;" aria-label="Notfallnummern anzeigen" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">🚨</button>
+        <div id="notfall-panel" class="nf-panel" style="display:none;position:absolute;bottom:64px;right:0;width:260px;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.18);padding:1rem;font-size:.88rem;line-height:1.5;">
+            <p style="font-weight:700;color:#c62828;margin:0 0 .5rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;">Akute Krise?</p>
+            <a href="tel:144" style="display:flex;align-items:center;gap:.5rem;padding:.5rem 0;color:#1a2a3a;text-decoration:none;border-bottom:1px solid #f0f0f0;font-weight:600;">🚑 <span>144 <span style="font-weight:400;color:#888;">Sanität</span></span></a>
+            <a href="tel:143" style="display:flex;align-items:center;gap:.5rem;padding:.5rem 0;color:#1a2a3a;text-decoration:none;border-bottom:1px solid #f0f0f0;font-weight:600;">💬 <span>143 <span style="font-weight:400;color:#888;">Dargebotene Hand</span></span></a>
+            <a href="tel:0800336655" style="display:flex;align-items:center;gap:.5rem;padding:.5rem 0;color:#1a2a3a;text-decoration:none;font-weight:600;">🏥 <span>0800 33 66 55 <span style="font-weight:400;color:#888;">PUK Notfall 24h</span></span></a>
+        </div>
+    </div>
+    <style>.nf-panel{display:none!important;}.nf-open{display:block!important;}@media print{#notfall-fab{display:none!important;}}</style>
     <script src="app.js" defer></script>
 </body>
 </html>

@@ -277,6 +277,47 @@ function safeRangeVal(id, fallback = 5) {
     return Number.isFinite(v) ? v : fallback;
 }
 
+function getEmpfehlung(erschoepft, sorgen, selbstsorge) {
+    var total = erschoepft + sorgen + selbstsorge;
+    var empfehlungen = [];
+    if (selbstsorge >= 7) {
+        empfehlungen.push({
+            icon: '🆘', title: 'Sie brauchen jetzt Unterstützung — für sich selbst.',
+            text: 'Ihre eigene Belastung ist sehr hoch. Bitte holen Sie sich Hilfe — das ist keine Schwäche, sondern Selbstschutz.',
+            links: [{href:'m5.html',label:'Modul: Selbstsorge →'},{href:'tel:+41583842000',label:'📞 PUK Angehörigenberatung: 058 384 20 00'}]
+        });
+    }
+    if (sorgen >= 8) {
+        empfehlungen.push({
+            icon: '⚠️', title: 'Ihre Sorgen sind gross.',
+            text: 'Wenn Sie befürchten, dass Ihr Angehöriger sich etwas antun könnte, lesen Sie, wie Sie das Thema ansprechen können.',
+            links: [{href:'m2.html#m2-3',label:'Suizid ansprechen →'},{href:'tel:143',label:'📞 Dargebotene Hand: 143'}]
+        });
+    }
+    if (erschoepft >= 7 && empfehlungen.length === 0) {
+        empfehlungen.push({
+            icon: '💛', title: 'Die Erschöpfung ist spürbar.',
+            text: 'Wenn Sie seit Langem für jemanden da sind, ist es normal, an Grenzen zu kommen. Lesen Sie, was Ihnen helfen kann.',
+            links: [{href:'m5.html',label:'Modul: Selbstsorge →'},{href:'m3.html#m3-3',label:'Grenzen setzen →'}]
+        });
+    }
+    if (total <= 12) {
+        empfehlungen.push({
+            icon: '📘', title: 'Ein guter Moment, sich zu informieren.',
+            text: 'Sie scheinen noch Ressourcen zu haben. Nutzen Sie diese Phase, um sich Wissen aufzubauen — das hilft, wenn es schwieriger wird.',
+            links: [{href:'m1.html',label:'Modul: Was ist Depression? →'},{href:'m1b.html',label:'Modul: Behandlung →'}]
+        });
+    }
+    if (empfehlungen.length === 0) {
+        empfehlungen.push({
+            icon: '🤝', title: 'Sie tragen viel.',
+            text: 'Ihre Belastung ist mittel bis hoch. Informieren Sie sich und holen Sie sich Unterstützung, bevor es zu viel wird.',
+            links: [{href:'m2.html',label:'Modul: Kommunikation →'},{href:'m6.html',label:'Modul: Hilfe finden →'}]
+        });
+    }
+    return empfehlungen;
+}
+
 function evalBarometer() {
     const v1 = safeRangeVal('bar1');
     const v2 = safeRangeVal('bar2');
@@ -301,8 +342,22 @@ function evalBarometer() {
         result.innerHTML = '<strong>Ihre Belastung ist erhöht.</strong> Das ist ein Zeichen, dass Sie sich um sich selbst kümmern müssen. Lesen Sie Modul 5 (Selbstsorge) und erwägen Sie, sich professionelle Unterstützung zu holen. <a href="m5.html" style="color:inherit;font-weight:600;">→ Zu Modul 5</a>';
     } else {
         result.className = 'barometer-result show high';
-        result.innerHTML = '<strong>Ihre Belastung ist hoch.</strong> Bitte nehmen Sie das ernst. Sie brauchen jetzt Unterstützung — für sich selbst. Rufen Sie die Angehörigenberatung der PUK an: <a href="tel:0583846500" style="color:inherit;font-weight:700;">058 384 65 00</a>. Oder lesen Sie Modul 5 und 6. <a href="m5.html" style="color:inherit;font-weight:600;">→ Zu Modul 5</a>';
+        result.innerHTML = '<strong>Ihre Belastung ist hoch.</strong> Bitte nehmen Sie das ernst. Sie brauchen jetzt Unterstützung — für sich selbst. Rufen Sie die Angehörigenberatung der PUK an: <a href="tel:+41583842000" style="color:inherit;font-weight:700;">058 384 20 00</a>. Oder lesen Sie Modul 5 und 6. <a href="m5.html" style="color:inherit;font-weight:600;">→ Zu Modul 5</a>';
     }
+
+    // Personalisierte Empfehlungen
+    var empfehlungen = getEmpfehlung(v1, v2, v3);
+    var empfHTML = '';
+    empfehlungen.forEach(function(e) {
+        empfHTML += '<div style="margin-top:1rem;padding:1rem;background:#fff;border-left:4px solid var(--m1,#D24136);border-radius:0 8px 8px 0;">';
+        empfHTML += '<p style="font-size:1.1rem;margin:0 0 .3rem;">' + e.icon + ' <strong>' + e.title + '</strong></p>';
+        empfHTML += '<p style="font-size:.9rem;margin:0 0 .5rem;color:#555;">' + e.text + '</p>';
+        e.links.forEach(function(l) {
+            empfHTML += '<a href="' + l.href + '" style="display:inline-block;margin-right:.75rem;margin-top:.25rem;font-size:.88rem;font-weight:600;color:var(--m1,#D24136);text-decoration:none;">' + l.label + '</a>';
+        });
+        empfHTML += '</div>';
+    });
+    result.innerHTML += empfHTML;
 
     // SR-Feedback
     announceToSR(result.textContent);
@@ -358,3 +413,39 @@ function initNavHighlight() {
     }, { rootMargin: '-30% 0px -60% 0px' });
     sections.forEach(s => observer.observe(s));
 }
+
+/* ---- Abschnitt-Teilen-Links ---- */
+(function() {
+    var headings = document.querySelectorAll('.module-section h3[id]');
+    headings.forEach(function(h) {
+        var btn = document.createElement('button');
+        btn.innerHTML = '🔗';
+        btn.title = 'Link zu diesem Abschnitt kopieren';
+        btn.setAttribute('aria-label', 'Link zu diesem Abschnitt kopieren');
+        btn.style.cssText = 'background:none;border:none;cursor:pointer;font-size:.85rem;opacity:.3;transition:opacity .15s;margin-left:.4rem;vertical-align:middle;padding:0;';
+        btn.onmouseover = function() { this.style.opacity = '1'; };
+        btn.onmouseout = function() { this.style.opacity = '.3'; };
+        btn.onclick = function(e) {
+            e.preventDefault();
+            var url = window.location.origin + window.location.pathname + '#' + h.id;
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(url).then(function() {
+                    btn.innerHTML = '✓';
+                    btn.style.opacity = '1';
+                    setTimeout(function() { btn.innerHTML = '🔗'; btn.style.opacity = '.3'; }, 2000);
+                });
+            } else {
+                var t = document.createElement('textarea');
+                t.value = url;
+                document.body.appendChild(t);
+                t.select();
+                document.execCommand('copy');
+                document.body.removeChild(t);
+                btn.innerHTML = '✓';
+                btn.style.opacity = '1';
+                setTimeout(function() { btn.innerHTML = '🔗'; btn.style.opacity = '.3'; }, 2000);
+            }
+        };
+        h.appendChild(btn);
+    });
+})();
