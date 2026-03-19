@@ -239,8 +239,15 @@ function initBackToTop() {
     const btt = document.getElementById('back-to-top');
     if (!btt) return;
     btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        btt.style.display = window.scrollY > 400 ? 'flex' : 'none';
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                btt.style.display = window.scrollY > 400 ? 'flex' : 'none';
+                ticking = false;
+            });
+            ticking = true;
+        }
     }, { passive: true });
 }
 
@@ -340,13 +347,13 @@ function initNavHighlight() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-links a');
     if (!sections.length || !navLinks.length) return;
+    // Build a map from href → link element for O(1) lookups
+    const navMap = new Map();
+    navLinks.forEach(l => navMap.set(l.getAttribute('href'), l));
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                navLinks.forEach(l => {
-                    l.style.fontWeight = l.getAttribute('href') === '#' + entry.target.id ? '700' : '';
-                });
-            }
+            const link = navMap.get('#' + entry.target.id);
+            if (link) link.style.fontWeight = entry.isIntersecting ? '700' : '';
         });
     }, { rootMargin: '-30% 0px -60% 0px' });
     sections.forEach(s => observer.observe(s));
