@@ -630,6 +630,64 @@
     text-decoration:none;
 }
 .krisenplan-backlink:hover,.krisenplan-backlink:focus{text-decoration:underline;}
+.quick-choice{
+    background:var(--bg2);
+    border:1.5px solid var(--border);
+    border-radius:var(--radius);
+    padding:1rem 1.15rem;
+    margin:1.25rem 0 2rem;
+}
+.quick-choice-title{
+    font-size:.74rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    color:var(--module-color,var(--m1));
+    margin:0 0 .45rem;
+}
+.quick-choice-intro{
+    font-size:.92rem;
+    color:var(--text);
+    margin:0 0 .85rem;
+    line-height:1.6;
+}
+.quick-choice-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.55rem;
+}
+.quick-choice-link{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:.55rem .9rem;
+    border:1px solid var(--border);
+    border-radius:999px;
+    background:var(--white);
+    color:var(--text);
+    text-decoration:none;
+    font-size:.88rem;
+    font-weight:600;
+    line-height:1.35;
+    transition:border-color .2s, background-color .2s, color .2s;
+}
+.quick-choice-link:hover,.quick-choice-link:focus{
+    border-color:var(--module-color,var(--m1));
+    background:var(--bg);
+    color:var(--text);
+}
+.quick-choice-link.is-active{
+    border-color:var(--module-color,var(--m1));
+    background:color-mix(in srgb, var(--module-color,var(--m1)) 10%, var(--white));
+}
+.section-spotlight{
+    animation:section-spotlight 2.4s ease;
+}
+@keyframes section-spotlight{
+    0%{box-shadow:0 0 0 0 color-mix(in srgb, var(--module-color,var(--m1)) 24%, transparent);}
+    35%{box-shadow:0 0 0 10px color-mix(in srgb, var(--module-color,var(--m1)) 10%, transparent);}
+    100%{box-shadow:0 0 0 0 transparent;}
+}
 @media (max-width:767px){
     .home-hero{margin:2rem auto 1.25rem;padding:0 1rem;}
     .home-hero h1{font-size:1.9rem;}
@@ -644,4 +702,7 @@
     .page-nav>span{display:none;}
     .page-nav-btn{justify-content:center;}
     .ressourcen-list li{padding:.9rem 0;}
+    .quick-choice{padding:1rem;}
+    .quick-choice-links{flex-direction:column;}
+    .quick-choice-link{justify-content:flex-start;border-radius:10px;}
 }

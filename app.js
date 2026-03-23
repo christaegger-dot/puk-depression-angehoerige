@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ['KriseCta',        initKriseCta],
         ['BarometerReset',  initBarometerReset],
         ['NotfallFab',      initNotfallFab],
+        ['QuickChoice',     initQuickChoice],
         ['PrintButtons',    initPrintButtons],
     ];
     modules.forEach(([name, fn]) => {
@@ -101,6 +102,29 @@ function initPrintButtons() {
     document.querySelectorAll('.print-btn').forEach((button) => {
         button.addEventListener('click', () => {
             window.print();
+        });
+    });
+}
+
+function initQuickChoice() {
+    document.querySelectorAll('.quick-choice').forEach((nav) => {
+        const links = Array.from(nav.querySelectorAll('.quick-choice-link'));
+        if (!links.length) return;
+
+        links.forEach((link) => {
+            link.addEventListener('click', () => {
+                links.forEach((item) => item.classList.remove('is-active'));
+                link.classList.add('is-active');
+
+                const targetId = link.getAttribute('href');
+                const target = targetId ? document.querySelector(targetId) : null;
+                if (!target) return;
+
+                target.classList.remove('section-spotlight');
+                // Restart animation reliably on repeated clicks.
+                void target.offsetWidth;
+                target.classList.add('section-spotlight');
+            });
         });
     });
 }
