@@ -56,7 +56,7 @@
 <li><a href="m2.html">Kommunikation</a></li>
 <li><a href="m3.html">Beziehung</a></li>
 <li><a href="m4.html">Begleiterkrankungen</a></li>
-<li><a href="#" aria-current="page" title="Selbstsorge">M6</a></li>
+<li><a href="#" aria-current="page" title="Selbstsorge">Selbstsorge</a></li>
 <li><a href="m6.html">Hilfe finden</a></li>
 
         </ul>
@@ -284,7 +284,7 @@
     
 <details class="optional-uebungen" style="margin:2rem 0;">
     <summary style="cursor:pointer;font-weight:600;font-size:.95rem;color:var(--module-color);padding:.5rem 0;list-style:none;display:flex;align-items:center;gap:.5rem;"><span aria-hidden="true">▸</span> Optional: Übungen &amp; Visualisierungen</summary>
-<div class="quiz-block" role="region" aria-label="Wissens-Anker Modul 5" style="--module-color:var(--m5);">
+<div class="quiz-block" role="region" aria-label="Wissens-Anker Modul 6" style="--module-color:var(--m5);">
         <p class="quiz-intro">Kurze Überprüfung</p>
         <fieldset class="quiz-question" id="quiz-m5-q1">
             <legend class="quiz-q-text"><strong>Frage:</strong> Was ist «compassion fatigue» (Mitgefühlserschöpfung)?</legend>
@@ -295,7 +295,7 @@
             </div>
             <div class="quiz-feedback" aria-live="polite" id="quiz-m5-q1-feedback"></div>
         </fieldset>
-        <button class="quiz-submit" data-quiz="quiz-m5-q1" aria-describedby="quiz-m5-q1-feedback" data-correct="b" data-success="Richtig! Compassion fatigue ist ein ernstes Warnsignal. Im Alltag: Wenn Sie sich in 3 oder mehr Warnsignalen wiedererkennen, ist jetzt der richtige Zeitpunkt, Modul 6 zu öffnen." data-fail="Lesen Sie nochmals den Abschnitt «Das Risiko der sekundären Traumatisierung».">Antwort prüfen</button>
+        <button class="quiz-submit" data-quiz="quiz-m5-q1" aria-describedby="quiz-m5-q1-feedback" data-correct="b" data-success="Richtig! Compassion fatigue ist ein ernstes Warnsignal. Im Alltag gilt: Wenn Sie sich in 3 oder mehr Warnsignalen wiedererkennen, ist jetzt der richtige Zeitpunkt, sich Unterstützung zu holen." data-fail="Lesen Sie nochmals den Abschnitt «Das Risiko der sekundären Traumatisierung».">Antwort prüfen</button>
     </div>
 
     <div class="card action-box" style="--module-color:var(--m5);border-left:4px solid var(--module-color);">
@@ -397,13 +397,13 @@
                 </ul>
             </div>
         </div>
-        <p class="module-end-next">Weiter zu <a href="m6.html">Modul 7: Ressourcen &amp; Handeln →</a></p>
+        <p class="module-end-next">Weiter zu <a href="m6.html">Modul 7: Hilfe finden →</a></p>
     </div>
 </section>
 
 <nav class="page-nav" aria-label="Seitennavigation" style="--module-color:var(--m5)">
-    <a href="m4.html" class="page-nav-btn" aria-label="Zurück: Komorbiditäten">&#8592; Komorbiditäten</a>
-    <a href="m6.html" class="page-nav-btn primary" aria-label="Weiter: Ressourcen">Ressourcen &#8594;</a>
+    <a href="m4.html" class="page-nav-btn" aria-label="Zurück: Begleiterkrankungen">&#8592; Begleiterkrankungen</a>
+    <a href="m6.html" class="page-nav-btn primary" aria-label="Weiter: Hilfe finden">Hilfe finden &#8594;</a>
 </nav>
 </main>
 <footer>
@@ -425,12 +425,12 @@
     <button id="back-to-top" aria-label="Nach oben scrollen" style="position:fixed;bottom:1.5rem;left:1.5rem;width:44px;height:44px;border-radius:50%;background:var(--module-color,var(--m1));color:#fff;border:none;cursor:pointer;font-size:1.2rem;display:none;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(0,0,0,.2);z-index:700;" aria-hidden="true">&#8593;</button>
     <!-- Floating Notfall-Button -->
     <div id="notfall-fab" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:900;">
-        <button onclick="document.getElementById('notfall-panel').classList.toggle('nf-open')" style="width:52px;height:52px;border-radius:50%;background:#c62828;color:#fff;border:none;cursor:pointer;font-size:1.4rem;box-shadow:0 4px 16px rgba(198,40,40,.4);display:flex;align-items:center;justify-content:center;transition:transform .15s;" aria-label="Notfallnummern anzeigen" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'">🚨</button>
+        <button class="nf-toggle-btn" type="button" style="width:52px;height:52px;border-radius:50%;background:#c62828;color:#fff;border:none;cursor:pointer;font-size:1.4rem;box-shadow:0 4px 16px rgba(198,40,40,.4);display:flex;align-items:center;justify-content:center;transition:transform .15s;" aria-label="Notfallnummern anzeigen" aria-controls="notfall-panel" aria-expanded="false">🚨</button>
         <div id="notfall-panel" class="nf-panel" style="display:none;position:absolute;bottom:64px;right:0;width:260px;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.18);padding:1rem;font-size:.88rem;line-height:1.5;">
             <p style="font-weight:700;color:#c62828;margin:0 0 .5rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;">Akute Krise?</p>
             <a href="tel:144" style="display:flex;align-items:center;gap:.5rem;padding:.5rem 0;color:#1a2a3a;text-decoration:none;border-bottom:1px solid #f0f0f0;font-weight:600;">🚑 <span>144 <span style="font-weight:400;color:#888;">Sanität</span></span></a>
             <a href="tel:143" style="display:flex;align-items:center;gap:.5rem;padding:.5rem 0;color:#1a2a3a;text-decoration:none;border-bottom:1px solid #f0f0f0;font-weight:600;">💬 <span>143 <span style="font-weight:400;color:#888;">Dargebotene Hand</span></span></a>
-            <a href="tel:0800336655" style="display:flex;align-items:center;gap:.5rem;padding:.5rem 0;color:#1a2a3a;text-decoration:none;font-weight:600;">🏥 <span>0800 33 66 55 <span style="font-weight:400;color:#888;">PUK Notfall 24h</span></span></a>
+            <a href="tel:0800336655" style="display:flex;align-items:center;gap:.5rem;padding:.5rem 0;color:#1a2a3a;text-decoration:none;font-weight:600;">🏥 <span>0800 33 66 55 <span style="font-weight:400;color:#888;">Ärztefon / Notfalldienst 24h</span></span></a>
         </div>
     </div>
     <style>.nf-panel{display:none!important;}.nf-open{display:block!important;}@media print{#notfall-fab{display:none!important;}}</style>

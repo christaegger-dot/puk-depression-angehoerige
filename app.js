@@ -17,12 +17,15 @@ document.addEventListener('DOMContentLoaded', function () {
         ['MobileMenu',   initMobileMenu],
         ['Tabs',         initTabs],
         ['Quiz',         initQuiz],
+        ['FassSlider',   initFassSlider],
         ['FontControls', initFontControls],
         ['BackToTop',    initBackToTop],
         ['Barometer',    initBarometer],
         ['NavHighlight',    initNavHighlight],
         ['KriseCta',        initKriseCta],
         ['BarometerReset',  initBarometerReset],
+        ['NotfallFab',      initNotfallFab],
+        ['PrintButtons',    initPrintButtons],
     ];
     modules.forEach(([name, fn]) => {
         try { fn(); }
@@ -78,6 +81,27 @@ function initKriseCta() {
     if (!closeBtn || !cta) return;
     closeBtn.addEventListener('click', () => {
         cta.style.display = 'none';
+    });
+}
+
+function initNotfallFab() {
+    document.querySelectorAll('.nf-toggle-btn').forEach((button) => {
+        const panelId = button.getAttribute('aria-controls');
+        const panel = panelId ? document.getElementById(panelId) : null;
+        if (!panel) return;
+
+        button.addEventListener('click', () => {
+            const isOpen = panel.classList.toggle('nf-open');
+            button.setAttribute('aria-expanded', String(isOpen));
+        });
+    });
+}
+
+function initPrintButtons() {
+    document.querySelectorAll('.print-btn').forEach((button) => {
+        button.addEventListener('click', () => {
+            window.print();
+        });
     });
 }
 
@@ -148,6 +172,39 @@ function activateTab(activeTab, allTabs, container) {
         panel.classList.add('active');
         panel.hidden = false;
     }
+}
+
+function initFassSlider() {
+    const slider = document.getElementById('fass-slider');
+    const fill = document.getElementById('fass-fill');
+    const text = document.getElementById('fass-text');
+    const overflow = document.getElementById('fass-overflow');
+    const label = document.getElementById('fass-label');
+    if (!slider || !fill || !text || !overflow || !label) return;
+
+    slider.addEventListener('input', function () {
+        const v = parseInt(this.value, 10);
+        fill.style.height = Math.min(v, 100) + '%';
+        overflow.style.opacity = v > 85 ? '1' : '0';
+
+        if (v < 40) {
+            text.textContent = 'Das Fass ist noch nicht voll. Ihr Angehöriger kann die Belastungen bewältigen.';
+            fill.style.background = 'linear-gradient(to top,#3a8fd4,#7ab8e8)';
+            label.textContent = 'Belastung';
+        } else if (v < 70) {
+            text.textContent = 'Das Fass füllt sich. Risikofaktoren wie Konflikte, Schlafmangel oder Isolation kommen hinzu. Schutzfaktoren — soziale Kontakte, Bewegung, Therapie — können das Fass entlasten.';
+            fill.style.background = 'linear-gradient(to top,#d4953a,#e8c87a)';
+            label.textContent = 'Belastung steigt';
+        } else if (v < 90) {
+            text.textContent = 'Das Fass ist fast voll. Frühwarnzeichen zeigen sich: Rückzug, Schlafstörungen, Reizbarkeit. Jetzt ist der Moment, Hilfe zu suchen — bevor es überläuft.';
+            fill.style.background = 'linear-gradient(to top,#d4633a,#e89a7a)';
+            label.textContent = 'Kritisch';
+        } else {
+            text.textContent = 'Das Fass läuft über. Depression entsteht. Das ist keine Schwäche — es bedeutet, dass die Belastung die Kapazität überschritten hat. Behandlung kann das Fass wieder entlasten.';
+            fill.style.background = 'linear-gradient(to top,#c05050,#e07070)';
+            label.textContent = 'Überlauf';
+        }
+    });
 }
 
 /* ---- Quiz (mit Doppelklick-Guard) ---- */

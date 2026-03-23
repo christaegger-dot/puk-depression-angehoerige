@@ -205,6 +205,9 @@
         .krise-bottom-cta-close{background:none;border:1px solid rgba(255,255,255,.5);color:#fff;padding:.15rem .5rem;border-radius:4px;cursor:pointer;font-size:.78rem;margin-left:.75rem;vertical-align:middle;}
         @media (max-width:767px){.krise-bottom-cta{display:block;}}
 
+        .summary-link:hover,.summary-link:focus{background:#eae8e4;}
+        .nf-toggle-btn:hover,.nf-toggle-btn:focus{transform:scale(1.08);}
+
         /* Icons */
         .icon{display:inline-flex;align-items:center;justify-content:center;}
         .icon svg{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
