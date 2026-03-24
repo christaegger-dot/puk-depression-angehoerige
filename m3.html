@@ -31,15 +31,19 @@
 <div class="notfall-banner" aria-label="Notfall-Informationen" role="region">
     <div class="notfall-banner-inner">
         <span>🚨 Akute Gefahr?</span>
-        <a href="tel:117" style="color:#fff;font-weight:600;margin:0 .5rem;">117</a> Polizei |
         <a href="tel:144" style="color:#fff;font-weight:600;margin:0 .5rem;">144</a> Sanität |
-        <a href="tel:143" style="color:#fff;font-weight:600;margin:0 .5rem;">143</a> Dargebotene Hand
+        <a href="tel:117" style="color:#fff;font-weight:600;margin:0 .5rem;">117</a> Polizei
         <details class="notfall-details-wrap">
-            <summary>Mehr Nummern</summary>
+            <summary>Weitere Nummern</summary>
             <div class="notfall-extra">
-                <p>PUK Zürich — Kinder &amp; Jugendliche: <a href="tel:+41583846666">058 384 66 66</a></p>
-                <p>PUK Zürich — Erwachsene (ab 18): <a href="tel:+41583842000">058 384 20 00</a></p>
-                <p>PUK Zürich — Erwachsene (ab 65): <a href="tel:+41583844682">058 384 46 82</a></p>
+                <p><strong>Psychiatrische Krisenhilfe (24h):</strong></p>
+                <p>Ärztefon / psychiatrischer Notfalldienst Kt. Zürich: <a href="tel:0800336655">0800 33 66 55</a></p>
+                <p style="margin-top:.5rem;"><strong>Krisengespräch / emotionale Unterstützung:</strong></p>
+                <p>Dargebotene Hand: <a href="tel:143">143</a> (24h, anonym, kostenlos)</p>
+                <p style="margin-top:.5rem;"><strong>PUK Zürich — Anmeldung &amp; Beratung:</strong></p>
+                <p>Kinder &amp; Jugendliche: <a href="tel:+41583846666">058 384 66 66</a></p>
+                <p>Erwachsene (ab 18): <a href="tel:+41583842000">058 384 20 00</a></p>
+                <p>Erwachsene (ab 65): <a href="tel:+41583844682">058 384 46 82</a></p>
                 <p style="margin-top:.5rem;font-size:.82rem;color:rgba(255,255,255,.85);">Sie können einfach sagen: «Ich bin Angehörige*r und ich mache mir Sorgen um jemanden.» Mehr müssen Sie im ersten Moment nicht wissen.</p>
             </div>
         </details>
@@ -492,10 +496,13 @@
     <div id="notfall-fab" style="position:fixed;bottom:1.5rem;right:1.5rem;z-index:900;">
         <button class="nf-toggle-btn" type="button" style="width:52px;height:52px;border-radius:50%;background:#c62828;color:#fff;border:none;cursor:pointer;font-size:1.4rem;box-shadow:0 4px 16px rgba(198,40,40,.4);display:flex;align-items:center;justify-content:center;transition:transform .15s;" aria-label="Notfallnummern anzeigen" aria-controls="notfall-panel" aria-expanded="false">🚨</button>
         <div id="notfall-panel" class="nf-panel" style="display:none;position:absolute;bottom:64px;right:0;width:260px;background:#fff;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,.18);padding:1rem;font-size:.88rem;line-height:1.5;">
-            <p style="font-weight:700;color:#c62828;margin:0 0 .5rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;">Akute Krise?</p>
+            <p style="font-weight:700;color:#c62828;margin:0 0 .5rem;font-size:.8rem;text-transform:uppercase;letter-spacing:.06em;">Akute Gefahr?</p>
             <a href="tel:144" style="display:flex;align-items:center;gap:.5rem;padding:.5rem 0;color:#1a2a3a;text-decoration:none;border-bottom:1px solid #f0f0f0;font-weight:600;">🚑 <span>144 <span style="font-weight:400;color:#888;">Sanität</span></span></a>
-            <a href="tel:143" style="display:flex;align-items:center;gap:.5rem;padding:.5rem 0;color:#1a2a3a;text-decoration:none;border-bottom:1px solid #f0f0f0;font-weight:600;">💬 <span>143 <span style="font-weight:400;color:#888;">Dargebotene Hand</span></span></a>
-            <a href="tel:0800336655" style="display:flex;align-items:center;gap:.5rem;padding:.5rem 0;color:#1a2a3a;text-decoration:none;font-weight:600;">🏥 <span>0800 33 66 55 <span style="font-weight:400;color:#888;">Ärztefon / Notfalldienst 24h</span></span></a>
+            <a href="tel:117" style="display:flex;align-items:center;gap:.5rem;padding:.5rem 0;color:#1a2a3a;text-decoration:none;border-bottom:1px solid #f0f0f0;font-weight:600;">🚔 <span>117 <span style="font-weight:400;color:#888;">Polizei</span></span></a>
+            <p style="font-weight:700;color:#555;margin:.5rem 0 .3rem;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;">Psychiatrische Krisenhilfe</p>
+            <a href="tel:0800336655" style="display:flex;align-items:center;gap:.5rem;padding:.5rem 0;color:#1a2a3a;text-decoration:none;border-bottom:1px solid #f0f0f0;font-weight:600;">🏥 <span>0800 33 66 55 <span style="font-weight:400;color:#888;">Ärztefon 24h</span></span></a>
+            <p style="font-weight:700;color:#555;margin:.5rem 0 .3rem;font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;">Krisengespräch</p>
+            <a href="tel:143" style="display:flex;align-items:center;gap:.5rem;padding:.5rem 0;color:#1a2a3a;text-decoration:none;font-weight:600;">💬 <span>143 <span style="font-weight:400;color:#888;">Dargebotene Hand (24h)</span></span></a>
         </div>
     </div>
     <style>.nf-panel{display:none!important;}.nf-open{display:block!important;}@media print{#notfall-fab{display:none!important;}}</style>
