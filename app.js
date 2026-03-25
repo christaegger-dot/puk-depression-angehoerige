@@ -365,7 +365,7 @@ function getEmpfehlung(erschoepft, sorgen, selbstsorge) {
         empfehlungen.push({
             icon: '🆘', title: 'Sie brauchen jetzt Unterstützung — für sich selbst.',
             text: 'Ihre eigene Belastung ist sehr hoch. Bitte holen Sie sich Hilfe — das ist keine Schwäche, sondern Selbstschutz.',
-            links: [{href:'m5.html',label:'Modul: Selbstsorge →'},{href:'tel:+41583842000',label:'📞 PUK Angehörigenberatung: 058 384 20 00'}]
+            links: [{href:'m5.html',label:'Modul: Selbstschutz →'},{href:'tel:+41583842000',label:'📞 PUK Angehörigenberatung: 058 384 20 00'}]
         });
     }
     if (sorgen >= 8) {
@@ -379,7 +379,7 @@ function getEmpfehlung(erschoepft, sorgen, selbstsorge) {
         empfehlungen.push({
             icon: '💛', title: 'Die Erschöpfung ist spürbar.',
             text: 'Wenn Sie seit Langem für jemanden da sind, ist es normal, an Grenzen zu kommen. Lesen Sie, was Ihnen helfen kann.',
-            links: [{href:'m5.html',label:'Modul: Selbstsorge →'},{href:'m3.html#m3-3',label:'Grenzen setzen →'}]
+            links: [{href:'m5.html',label:'Modul: Selbstschutz →'},{href:'m3.html#m3-3',label:'Grenzen setzen →'}]
         });
     }
     if (total <= 12 && empfehlungen.length === 0) {
@@ -393,7 +393,7 @@ function getEmpfehlung(erschoepft, sorgen, selbstsorge) {
         empfehlungen.push({
             icon: '🤝', title: 'Sie tragen viel.',
             text: 'Ihre Belastung ist mittel bis hoch. Informieren Sie sich und holen Sie sich Unterstützung, bevor es zu viel wird.',
-            links: [{href:'m2.html',label:'Modul: Kommunikation →'},{href:'m6.html',label:'Modul: Hilfe finden →'}]
+            links: [{href:'m2.html',label:'Modul: Kommunikation →'},{href:'m6.html',label:'Modul: Hilfe →'}]
         });
     }
     return empfehlungen;
@@ -417,10 +417,10 @@ function evalBarometer() {
     result.classList.add('show');
     if (total <= 15) {
         result.className = 'barometer-result show low';
-        result.innerHTML = '<strong>Ihre Belastung scheint derzeit moderat.</strong> Das ist gut. Nutzen Sie diese Website, um sich weiter zu informieren und vorzubereiten. Denken Sie daran: Auch bei moderater Belastung ist Selbstsorge wichtig.';
+        result.innerHTML = '<strong>Ihre Belastung scheint derzeit moderat.</strong> Das ist gut. Nutzen Sie diese Website, um sich weiter zu informieren und vorzubereiten. Denken Sie daran: Auch bei moderater Belastung ist Selbstschutz wichtig.';
     } else if (total <= 22) {
         result.className = 'barometer-result show medium';
-        result.innerHTML = '<strong>Ihre Belastung ist erhöht.</strong> Das ist ein Zeichen, dass Sie sich um sich selbst kümmern müssen. Lesen Sie Modul 5 (Selbstsorge) und erwägen Sie, sich professionelle Unterstützung zu holen. <a href="m5.html" style="color:inherit;font-weight:600;">→ Zu Modul 5</a>';
+        result.innerHTML = '<strong>Ihre Belastung ist erhöht.</strong> Das ist ein Zeichen, dass Sie sich um sich selbst kümmern müssen. Lesen Sie Modul 5 (Selbstschutz) und erwägen Sie, sich professionelle Unterstützung zu holen. <a href="m5.html" style="color:inherit;font-weight:600;">→ Zu Modul 5</a>';
     } else {
         result.className = 'barometer-result show high';
         result.innerHTML = '<strong>Ihre Belastung ist hoch.</strong> Bitte nehmen Sie das ernst. Sie brauchen jetzt Unterstützung — für sich selbst. Rufen Sie die Angehörigenberatung der PUK an: <a href="tel:+41583842000" style="color:inherit;font-weight:700;">058 384 20 00</a>. Oder lesen Sie Modul 5 und 6. <a href="m5.html" style="color:inherit;font-weight:600;">→ Zu Modul 5</a>';
