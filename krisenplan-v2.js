@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     renderStages();
     bindTextareas();
     bindButtons();
-    updateSaveStatus("Lokal gespeichert. Änderungen werden automatisch auf diesem Gerät aktualisiert.");
+    updateSaveStatus("Ihre Eingaben werden auf diesem Gerät lokal gespeichert.");
 });
 
 function loadPlan() {
