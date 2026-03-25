@@ -250,6 +250,10 @@
 }
 
 @media print {
+    @page {
+        margin: 12mm;
+    }
+
     .notfall-banner,
     .skip-link,
     .krisenplan-v2-backlink,
@@ -271,9 +275,97 @@
         max-width: none;
     }
 
-    .krisenplan-v2-section,
-    .krisenplan-v2-alert {
+    .krisenplan-v2-header,
+    .krisenplan-v2-alert,
+    .krisenplan-v2-group,
+    .krisenplan-v2-contact,
+    .krisenplan-v2-stage,
+    .krisenplan-v2-footnote {
         break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    .krisenplan-v2-form,
+    .krisenplan-v2-section {
+        display: block;
+    }
+
+    .krisenplan-v2-header,
+    .krisenplan-v2-alert,
+    .krisenplan-v2-section,
+    .krisenplan-v2-footnote {
+        margin-bottom: .8rem;
+    }
+
+    .krisenplan-v2-header {
+        margin-bottom: 1rem;
+    }
+
+    .krisenplan-v2-alert,
+    .krisenplan-v2-section {
+        padding: .8rem 1rem;
+    }
+
+    .krisenplan-v2-section,
+    .krisenplan-v2-actions,
+    .krisenplan-v2-alert {
+        break-inside: auto;
+        page-break-inside: auto;
         box-shadow: none;
+    }
+
+    .krisenplan-v2-section-head,
+    .krisenplan-v2-section > h2,
+    .krisenplan-v2-section-intro {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+
+    .krisenplan-v2-section-intro,
+    .krisenplan-v2-stage-note,
+    .krisenplan-v2-printnote,
+    .krisenplan-v2-footnote {
+        font-size: .82rem;
+        line-height: 1.4;
+    }
+
+    .krisenplan-v2-section-intro,
+    .krisenplan-v2-stage-note {
+        margin-bottom: .6rem;
+    }
+
+    .krisenplan-v2-groups,
+    .krisenplan-v2-checklist,
+    .krisenplan-v2-contacts,
+    .krisenplan-v2-stages {
+        gap: .55rem;
+    }
+
+    .krisenplan-v2-group,
+    .krisenplan-v2-contact,
+    .krisenplan-v2-stage {
+        padding: .75rem .85rem;
+    }
+
+    .krisenplan-v2-check-item {
+        padding: .45rem .55rem;
+    }
+
+    .krisenplan-v2-field {
+        margin-top: .7rem;
+    }
+
+    .krisenplan-v2-field textarea,
+    .krisenplan-v2-contact input,
+    .krisenplan-v2-contact textarea,
+    .krisenplan-v2-stage textarea {
+        padding: .55rem .65rem;
+        border-radius: 6px;
+    }
+
+    .krisenplan-v2-field textarea,
+    .krisenplan-v2-stage textarea,
+    .krisenplan-v2-contact textarea {
+        min-height: 0;
     }
 }

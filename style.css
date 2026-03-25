@@ -59,10 +59,10 @@
 
         /* Navigation */
         .main-nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:var(--banner-h,38px);z-index:900;transition:top .2s;}
-        .nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 1rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;height:52px;}
-        .nav-logo{font-family:var(--font-serif);font-weight:600;font-size:.88rem;line-height:1.15;color:var(--text);text-decoration:none;max-width:170px;}
-        .nav-links{display:flex;gap:.15rem;list-style:none;flex-wrap:wrap;}
-        .nav-links a,.nav-links .nav-current{color:var(--muted);text-decoration:none;font-size:.78rem;padding:.28rem .38rem;border-radius:4px;white-space:nowrap;display:inline-block;}
+        .nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 1rem;display:flex;align-items:center;justify-content:space-between;gap:.9rem;min-height:56px;}
+        .nav-logo{font-family:var(--font-serif);font-weight:600;font-size:.9rem;line-height:1.15;color:var(--text);text-decoration:none;max-width:170px;}
+        .nav-links{display:flex;gap:.3rem;list-style:none;flex-wrap:wrap;}
+        .nav-links a,.nav-links .nav-current{color:var(--muted);text-decoration:none;font-size:.8rem;padding:.34rem .48rem;border-radius:5px;white-space:nowrap;display:inline-block;line-height:1.2;}
         .nav-links a:hover,.nav-links a:focus{background:var(--bg2);color:var(--text);}
         .hamburger{display:none;flex-direction:column;justify-content:space-between;width:28px;height:20px;background:none;border:none;cursor:pointer;padding:0;}
         .hamburger span{display:block;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s;}
@@ -210,9 +210,12 @@
         .krise-bottom-cta-close{background:none;border:1px solid rgba(255,255,255,.5);color:#fff;padding:.15rem .5rem;border-radius:4px;cursor:pointer;font-size:.78rem;margin-left:.75rem;vertical-align:middle;}
         @media (max-width:767px){.krise-bottom-cta{display:block;}}
 
-        .summary-link{display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1.2rem;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--text);text-decoration:none;font-size:.9rem;font-weight:600;transition:background-color .2s,border-color .2s,color .2s;}
+        .summary-link{display:inline-flex;align-items:center;gap:.5rem;padding:.68rem 1.2rem;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--text);text-decoration:none;font-size:.9rem;font-weight:600;line-height:1.35;transition:background-color .2s,border-color .2s,color .2s;}
         .summary-link:hover,.summary-link:focus{background:#eae8e4;border-color:var(--border);color:var(--text);}
-        .nf-toggle-btn:hover,.nf-toggle-btn:focus{transform:scale(1.08);}
+        #notfall-fab{bottom:1rem!important;right:1rem!important;}
+        .nf-toggle-btn{width:48px!important;height:48px!important;font-size:1.2rem!important;box-shadow:0 3px 12px rgba(198,40,40,.26)!important;transition:transform .12s ease,box-shadow .18s ease!important;}
+        .nf-toggle-btn:hover,.nf-toggle-btn:focus{transform:scale(1.03);box-shadow:0 5px 14px rgba(198,40,40,.3)!important;}
+        @media (max-width:767px){#notfall-fab{bottom:5rem!important;right:.85rem!important;}.nf-toggle-btn{width:46px!important;height:46px!important;font-size:1.12rem!important;}}
 
         /* Icons */
         .icon{display:inline-flex;align-items:center;justify-content:center;}
@@ -298,7 +301,7 @@
 
         /* Footer */
         footer{background:var(--bg2);border-top:1px solid var(--border);padding:2rem 1.2rem;margin-top:3rem;}
-        .footer-inner{max-width:var(--max-width);margin:0 auto;font-size:.85rem;color:var(--muted);}
+        .footer-inner{max-width:var(--max-width);margin:0 auto;font-size:.85rem;color:var(--muted);line-height:1.6;}
         .footer-links{display:flex;flex-wrap:wrap;gap:1rem;margin-bottom:.75rem;}
         .footer-links a{color:var(--muted);text-decoration:none;}
         .footer-links a:hover{color:var(--text);}
@@ -387,6 +390,7 @@
         /* P1-B: Footer meta line */
         footer{border-top:1px solid rgba(255,255,255,.12);padding-bottom:18px;}
         .footer-meta{font-size:.78rem;color:var(--text);text-align:right;margin-top:10px;opacity:.75;}
+        @media (max-width:600px){.footer-meta{text-align:left;}}
         /* Global focus ring for keyboard navigation */
         :focus-visible{outline:2px solid var(--info);outline-offset:2px;}
         :focus:not(:focus-visible){outline:none;}

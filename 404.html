@@ -14,14 +14,25 @@
         @font-face { font-family:'Source Sans 3'; font-style:normal; font-weight:400; font-display:swap; src:url('fonts/source-sans-3-v19-latin-regular.woff2') format('woff2'); }
         @font-face { font-family:'Source Sans 3'; font-style:normal; font-weight:600; font-display:swap; src:url('fonts/source-sans-3-v19-latin-600.woff2') format('woff2'); }
 
+        body {
+            min-height: 100svh;
+            display: flex;
+            flex-direction: column;
+        }
+        main#main-content {
+            flex: 1;
+            display: flex;
+        }
         .error-page {
-            min-height: 60vh;
+            flex: 1;
+            width: 100%;
+            min-height: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 3rem 1.5rem;
+            padding: 2.5rem 1.5rem 3rem;
         }
         .error-code {
             font-family: 'Lora', Georgia, serif;
@@ -54,12 +65,14 @@
         .error-links a {
             display: inline-flex;
             align-items: center;
+            justify-content: center;
             gap: .4rem;
             padding: .65rem 1.2rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
             font-size: .9rem;
+            min-height: 44px;
             transition: .2s;
         }
         .error-links a.primary {
@@ -78,16 +91,18 @@
             background: var(--border);
         }
         .error-modules {
-            margin-top: 2rem;
+            max-width: 760px;
+            margin-top: 1.6rem;
             display: flex;
             flex-wrap: wrap;
-            gap: .5rem;
+            gap: .6rem;
             justify-content: center;
         }
         .error-modules a {
-            padding: .4rem .8rem;
+            padding: .5rem .9rem;
             border-radius: 6px;
-            font-size: .82rem;
+            border: 1px solid var(--border);
+            font-size: .84rem;
             text-decoration: none;
             font-weight: 500;
             background: var(--bg2);
@@ -97,6 +112,21 @@
         .error-modules a:hover {
             background: var(--border);
             color: var(--text);
+        }
+        @media (max-width: 640px) {
+            .error-page {
+                padding: 2rem 1rem 2.5rem;
+            }
+            .error-links {
+                width: min(100%, 320px);
+                flex-direction: column;
+            }
+            .error-links a {
+                width: 100%;
+            }
+            .error-modules {
+                gap: .45rem;
+            }
         }
     </style>
 </head>

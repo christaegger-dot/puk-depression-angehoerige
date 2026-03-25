@@ -124,7 +124,7 @@ function loadPlan() {
     }
 }
 
-function savePlan(message = "Aenderungen lokal gespeichert.") {
+function savePlan(message = "Änderungen lokal gespeichert.") {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
     updateSaveStatus(message);
 }
@@ -318,7 +318,7 @@ function bindButtons() {
             renderContacts();
             renderStages();
             bindTextareas();
-            updateSaveStatus("Lokale Eingaben wurden geloescht.");
+            updateSaveStatus("Lokale Eingaben wurden gelöscht.");
         });
     }
 }
