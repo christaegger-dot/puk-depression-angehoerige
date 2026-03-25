@@ -59,10 +59,10 @@
 
         /* Navigation */
         .main-nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:var(--banner-h,38px);z-index:900;transition:top .2s;}
-        .nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 1rem;display:flex;align-items:center;justify-content:space-between;height:52px;}
-        .nav-logo{font-family:var(--font-serif);font-weight:600;font-size:.95rem;color:var(--text);text-decoration:none;}
-        .nav-links{display:flex;gap:.3rem;list-style:none;flex-wrap:wrap;}
-        .nav-links a,.nav-links .nav-current{color:var(--muted);text-decoration:none;font-size:.82rem;padding:.3rem .45rem;border-radius:4px;white-space:nowrap;display:inline-block;}
+        .nav-inner{max-width:var(--max-width);margin:0 auto;padding:0 1rem;display:flex;align-items:center;justify-content:space-between;gap:.75rem;height:52px;}
+        .nav-logo{font-family:var(--font-serif);font-weight:600;font-size:.88rem;line-height:1.15;color:var(--text);text-decoration:none;max-width:170px;}
+        .nav-links{display:flex;gap:.15rem;list-style:none;flex-wrap:wrap;}
+        .nav-links a,.nav-links .nav-current{color:var(--muted);text-decoration:none;font-size:.78rem;padding:.28rem .38rem;border-radius:4px;white-space:nowrap;display:inline-block;}
         .nav-links a:hover,.nav-links a:focus{background:var(--bg2);color:var(--text);}
         .hamburger{display:none;flex-direction:column;justify-content:space-between;width:28px;height:20px;background:none;border:none;cursor:pointer;padding:0;}
         .hamburger span{display:block;height:2px;background:var(--text);border-radius:2px;transition:transform .25s,opacity .25s;}
@@ -111,6 +111,9 @@
         /* Karten */
         .card{background:var(--bg2);border-radius:var(--radius);padding:1.2rem;border-left:4px solid var(--module-color,var(--m1));margin-bottom:1rem;transition:border-color .2s ease,background-color .2s ease;}
         .card:hover{transform:none;box-shadow:none;}
+        .module-lead-card{padding:1rem 1.15rem;margin-bottom:.9rem;background:rgba(245,240,235,.78);}
+        .module-lead-card ul{margin-top:.1rem;}
+        .module-lead-card li{font-size:.92rem;line-height:1.55;}
 
         /* Accordion */
 
@@ -248,10 +251,13 @@
 
         /* Bridge */
         .bridge-text{margin-top:2rem;padding:1rem 1.25rem;background:var(--bg2);border-radius:var(--radius);font-size:.95rem;color:var(--muted);font-style:italic;}
+        .section-secondary{margin-top:2.25rem;padding-top:1rem;border-top:1px dashed var(--border);}
+        .section-secondary h3{opacity:.9;}
 
 
         /* Kurzfassung (30-Sekunden-Überblick) */
         .kurzfassung{background:var(--bg2);border-radius:var(--radius);padding:1.1rem 1.4rem;margin:1.25rem 0 2rem;border-left:4px solid var(--module-color,var(--m1));}
+        .kurzfassung--compact{padding:.95rem 1.1rem;margin:1rem 0 1.35rem;}
         .kurzfassung-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--module-color,var(--m1));margin-bottom:.5rem;}
         .kurzfassung ul{margin:0;padding-left:1.2rem;}
         .kurzfassung li{font-size:.93rem;line-height:1.6;color:var(--text);margin-bottom:.25rem;}
@@ -361,6 +367,7 @@
         }
         /* P1-1: Mini-TOC */
         .module-toc{background:var(--bg2);border-radius:var(--radius);padding:.9rem 1.2rem;margin:1rem 0 1.5rem;border-left:3px solid var(--module-color,var(--m1));}
+        .module-toc--compact{padding:.75rem 1rem;margin:.85rem 0 1rem;}
         .module-toc-title{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--module-color,var(--m1));margin:0 0 .4rem;}
         .module-toc ol{margin:0;padding-left:1.2rem;}
         .module-toc li{font-size:.88rem;line-height:1.6;margin-bottom:.15rem;}
