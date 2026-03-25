@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Persönlicher Krisenplan | PUK Zürich</title>
     <meta name="description" content="Persönlicher Krisenplan für Angehörige von Menschen mit Depression: Warnsignale, hilfreiche Schritte, Kontakte und Stufenplan lokal speichern und drucken.">
+    <link rel="canonical" href="https://puk-depression-angehoerige.netlify.app/krisenplan.html">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preload" as="font" href="fonts/lora-v37-latin-regular.woff2" crossorigin>
     <link rel="preload" as="font" href="fonts/source-sans-3-v19-latin-regular.woff2" crossorigin>
@@ -44,9 +45,23 @@
             <p class="eyebrow">Werkzeug für Angehörige</p>
             <h1 class="module-title">Persönlicher Krisenplan</h1>
             <p class="module-intro">Dieser Krisenplan hilft Angehörigen, Warnsignale, hilfreiche Schritte, Kontakte und einen Stufenplan festzuhalten. Er soll im Ernstfall nicht perfekt wirken, sondern Entscheidungen vereinfachen. Alle Eingaben bleiben lokal auf diesem Gerät.</p>
+            <ul class="krisenplan-v2-facts" aria-label="Eigenschaften des Krisenplans">
+                <li>lokal gespeichert</li>
+                <li>direkt ausfüllbar</li>
+                <li>druckbar als PDF</li>
+            </ul>
             <p class="krisenplan-v2-headnote">Füllen Sie den Plan möglichst in einer ruhigeren Phase aus. Im akuten Krisenmoment ist klare Orientierung wichtiger als Vollständigkeit.</p>
             <p class="krisenplan-v2-backlink"><a href="m6.html">← Zurück zu Hilfe</a></p>
         </header>
+
+        <section class="card krisenplan-v2-orientation" aria-labelledby="krisenplan-orientierung-title">
+            <h2 id="krisenplan-orientierung-title">Wofür dieser Plan besonders gedacht ist</h2>
+            <ul>
+                <li>wenn Sie wiederkehrende Warnsignale früh festhalten möchten</li>
+                <li>wenn im Ernstfall Telefonnummern und nächste Schritte nicht erst gesucht werden sollen</li>
+                <li>wenn Sie den Plan mit einer Fachperson oder einer weiteren Bezugsperson besprechen möchten</li>
+            </ul>
+        </section>
 
         <section class="card krisenplan-v2-alert" aria-labelledby="krisenplan-notfall-title">
             <h2 id="krisenplan-notfall-title">Akute Notfallhilfe</h2>
@@ -119,7 +134,7 @@
                     <button type="button" class="krisenplan-v2-btn krisenplan-v2-btn-primary" id="print-plan">Krisenplan drucken / als PDF speichern</button>
                     <button type="button" class="krisenplan-v2-btn krisenplan-v2-btn-secondary" id="reset-plan">Eingaben löschen</button>
                 </div>
-                <p class="krisenplan-v2-printnote">Wenn möglich, besprechen Sie den Plan mit einer Fachperson oder einer weiteren Bezugsperson. Ein guter Krisenplan nimmt im Ernstfall Druck heraus, statt neue Fragen zu erzeugen.</p>
+                <p class="krisenplan-v2-printnote">Wenn möglich, besprechen Sie den Plan mit einer Fachperson oder einer weiteren Bezugsperson. Ein guter Krisenplan nimmt im Ernstfall Druck heraus, statt neue Fragen zu erzeugen. Die kanonische Adresse dieses Werkzeugs ist <strong>krisenplan.html</strong>.</p>
                 <p class="krisenplan-v2-status" id="save-status" aria-live="polite">Ihre Eingaben werden auf diesem Gerät lokal gespeichert.</p>
             </section>
         </form>

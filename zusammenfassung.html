@@ -4,122 +4,170 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zusammenfassung — Depression & Angehörige | PUK Zürich</title>
+<meta name="description" content="Eine priorisierte Kompassseite für Angehörige: Notfallnummern, erste Schritte, Warnsignale und klare Orientierung zum Ausdrucken oder Teilen.">
+<link rel="canonical" href="https://puk-depression-angehoerige.netlify.app/zusammenfassung.html">
 <style>
 @media screen {
-  body { font-family: 'Source Sans 3', system-ui, sans-serif; max-width: 800px; margin: 0 auto; padding: 2rem 1rem; color: #1a2a3a; background: #F9F9FF; }
-  .print-btn { display: inline-flex; align-items: center; gap: .5rem; background: #00618A; color: #fff; border: none; border-radius: 6px; padding: .75rem 1.5rem; font-size: .95rem; font-weight: 600; cursor: pointer; margin-bottom: 2rem; }
-  .print-btn:hover { opacity: .85; }
-  .back-link { display: inline-block; margin-bottom: 1rem; color: #00618A; font-size: .9rem; }
+  body { font-family: 'Source Sans 3', system-ui, sans-serif; max-width: 880px; margin: 0 auto; padding: 2rem 1rem 3rem; color: #1a2a3a; background: #F9F9FF; }
+  .back-link { display: inline-block; margin-bottom: 1rem; color: #00618A; font-size: .92rem; font-weight: 600; }
+  .summary-toolbar { display:flex; gap:.75rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+  .print-btn, .tool-link { display:inline-flex; align-items:center; gap:.5rem; border-radius:8px; padding:.78rem 1.1rem; font-size:.95rem; font-weight:600; text-decoration:none; cursor:pointer; }
+  .print-btn { background:#00618A; color:#fff; border:none; }
+  .tool-link { background:#fff; border:1px solid #d7dbe0; color:#1a2a3a; }
+  .print-btn:hover, .tool-link:hover { opacity:.9; }
 }
 @media print {
-  body { font-size: 10pt; color: #000; max-width: none; padding: 0; }
-  .print-btn, .back-link { display: none; }
+  body { font-size: 10pt; color: #000; max-width: none; padding: 0; background:#fff; }
+  .print-btn, .tool-link, .back-link, .summary-toolbar { display: none !important; }
   h1 { font-size: 16pt; }
   h2 { font-size: 12pt; margin-top: 1em; page-break-after: avoid; }
-  .summary-block { page-break-inside: avoid; }
-  .notfall-box { border: 2pt solid #c62828; }
+  .summary-block, .priority-box, .notfall-box, .lage-grid, .summary-steps { page-break-inside: avoid; }
 }
 * { box-sizing: border-box; }
-h1 { font-family: 'Lora', Georgia, serif; font-size: 1.5rem; margin: 0 0 .5rem; }
-.subtitle { color: #6b7b8b; font-size: .95rem; margin-bottom: 1.5rem; }
-.notfall-box { background: #fce8e8; border: 1px solid #c62828; border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; }
-.notfall-box p { margin: .25rem 0; font-size: .9rem; }
-.notfall-box strong { color: #c62828; }
-h2 { font-size: 1rem; font-weight: 700; color: #00618A; border-bottom: 2px solid #e2e0dc; padding-bottom: .3rem; margin: 1.5rem 0 .5rem; }
-.summary-block ul, .summary-block ol { margin: .3rem 0 1rem; padding-left: 1.2rem; font-size: .9rem; line-height: 1.6; }
-.summary-block p { font-size: .92rem; line-height: 1.6; margin: .35rem 0 .75rem; }
-.priority-box { background:#f7f5f2;border-radius:8px;padding:1rem 1.2rem;margin-top:1.5rem; }
-.footer-print { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e2e0dc; font-size: .8rem; color: #999; }
+body { line-height:1.6; }
+h1 { font-family: 'Lora', Georgia, serif; font-size: 1.9rem; line-height:1.2; margin: 0 0 .5rem; }
+.summary-eyebrow { font-size:.76rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#00618A; margin:0 0 .45rem; }
+.subtitle { color: #5c6c79; font-size: 1rem; margin: 0 0 1rem; }
+.summary-intro { font-size:.97rem; color:#314252; margin:0 0 1.35rem; }
+.summary-hero { margin-bottom:1.6rem; }
+.notfall-box { background: #fce8e8; border: 1px solid #c62828; border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; }
+.notfall-box p { margin: .25rem 0; font-size: .92rem; }
+.notfall-box strong { color: #a22222; }
+.priority-box { background:#f7f5f2; border:1px solid #e4ddd5; border-radius:10px; padding:1rem 1.2rem; margin:0 0 1.5rem; }
+.priority-box p { margin:.25rem 0; }
+.priority-box ol { margin:.5rem 0 0; padding-left:1.2rem; font-size:.95rem; }
+.summary-block { margin-bottom:1.35rem; }
+h2 { font-size: 1.02rem; font-weight: 700; color: #00618A; border-bottom: 2px solid #e2e0dc; padding-bottom: .3rem; margin: 1.5rem 0 .6rem; }
+.summary-block ul, .summary-block ol { margin: .35rem 0 0.9rem; padding-left: 1.2rem; font-size: .93rem; line-height: 1.65; }
+.summary-block p { font-size: .94rem; line-height: 1.65; margin: .35rem 0 .75rem; }
+.lage-grid { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; margin:1rem 0 1.4rem; }
+.lage-card { background:#fff; border:1px solid #dde2e8; border-radius:10px; padding:1rem; }
+.lage-card-title { font-weight:700; margin:0 0 .25rem; color:#1f3a4e; }
+.lage-card p { margin:.2rem 0; font-size:.92rem; color:#314252; }
+.lage-card a { color:#00618A; font-weight:600; text-decoration:none; }
+.summary-steps { background:#fff; border:1px solid #dde2e8; border-radius:10px; padding:1rem 1.1rem; }
+.summary-steps ol { margin:.3rem 0 0; padding-left:1.2rem; }
+.summary-steps li + li { margin-top:.45rem; }
+.footer-print { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e2e0dc; font-size: .82rem; color: #6f7b86; }
+@media (max-width: 640px) {
+  .lage-grid { grid-template-columns:1fr; }
+  h1 { font-size:1.65rem; }
+}
 </style>
 </head>
 <body>
 
 <a href="index.html" class="back-link">← Zurück zur Website</a>
-<button class="print-btn" type="button">🖨️ Diese Seite drucken / als PDF speichern</button>
 
-<h1>Depression & Angehörige — Das Wichtigste auf einen Blick</h1>
-<p class="subtitle">PUK Zürich · Fachstelle Angehörigenarbeit · Kompassseite für Angehörige in belastenden Situationen</p>
+<div class="summary-toolbar">
+  <button class="print-btn" type="button">🖨️ Drucken / als PDF speichern</button>
+  <a href="krisenplan.html" class="tool-link">📋 Persönlichen Krisenplan öffnen</a>
+</div>
+
+<div class="summary-hero">
+  <p class="summary-eyebrow">Kompaktes Artefakt für Angehörige</p>
+  <h1>Depression & Angehörige — Orientierung auf einer Seite</h1>
+  <p class="subtitle">PUK Zürich · Fachstelle Angehörigenarbeit · für Situationen, in denen Sie nicht alles lesen, aber das Richtige nicht vergessen möchten</p>
+  <p class="summary-intro">Diese Seite ist als Kompass gedacht: für den Kühlschrank, die Tasche, das Behandlungsgespräch oder einen Moment, in dem Sie selbst kaum Energie haben. Sie priorisiert nicht alles, sondern das, was Angehörigen in belasteten Situationen meist zuerst hilft.</p>
+</div>
 
 <div class="notfall-box">
-<p><strong>🚨 Bei akuter Gefahr — sofort handeln:</strong></p>
-<p><strong>144</strong> Sanität · <strong>117</strong> Polizei</p>
-<p><strong>Ärztlicher Notfalldienst:</strong> <strong>0800 33 66 55</strong> Ärztefon — Ärztlicher Notfalldienst Kt. Zürich (24h)</p>
-<p><strong>Krisengespräch:</strong> <strong>143</strong> Dargebotene Hand (24h, anonym, kostenlos)</p>
-<p><strong>058 384 20 00</strong> PUK Angehörigenberatung (kostenlos, ohne Überweisung)</p>
+  <p><strong>🚨 Bei akuter Gefahr — sofort handeln:</strong></p>
+  <p><strong>144</strong> Sanität · <strong>117</strong> Polizei</p>
+  <p><strong>Ärztlicher Notfalldienst:</strong> <strong>0800 33 66 55</strong> Ärztefon — Ärztlicher Notfalldienst Kt. Zürich (24h)</p>
+  <p><strong>Krisengespräch:</strong> <strong>143</strong> Dargebotene Hand (24h, anonym, kostenlos)</p>
+  <p><strong>PUK Angehörigenberatung:</strong> <strong>058 384 20 00</strong> (kostenlos, ohne Überweisung)</p>
+</div>
+
+<div class="priority-box">
+  <p style="font-weight:700;margin:0 0 .35rem;">Wenn heute nur wenig hängen bleiben soll:</p>
+  <ol>
+    <li>Sie müssen die Lage nicht zuerst vollständig verstehen, um Hilfe holen zu dürfen.</li>
+    <li>Wenn etwas plötzlich nicht mehr ins Bild passt, lohnt sich Beobachtung oft mehr als weiteres Rätseln.</li>
+    <li>Selbstschutz ist kein Gegenstück zu guter Begleitung, sondern ein Teil davon.</li>
+  </ol>
 </div>
 
 <div class="summary-block">
-<h2>Drei Grundgedanken</h2>
-<ul>
-<li>Depression ist eine Erkrankung, nicht ein Mangel an Willen, Disziplin oder Liebe.</li>
-<li>Sie müssen die Situation nicht zuerst vollständig verstehen, um Hilfe holen zu dürfen.</li>
-<li>Selbstschutz ist kein Gegenstück zu guter Begleitung, sondern ein Teil davon.</li>
-</ul>
+  <h2>Vier typische Lagen — und was dann meist der sinnvollste nächste Schritt ist</h2>
+  <div class="lage-grid">
+    <div class="lage-card">
+      <p class="lage-card-title">Ich habe Sorge, dass es akut kippt</p>
+      <p>Nicht alleine sortieren. Bei akuter Gefahr sofort handeln, bei grosser Sorge früh telefonische Hilfe holen.</p>
+      <p><a href="m6.html#m6-1">Zur Akut-Hilfe →</a></p>
+    </div>
+    <div class="lage-card">
+      <p class="lage-card-title">Es ist nicht akut, aber alles wirkt unübersichtlich</p>
+      <p>Wenn Angst, Konsum, Schlaf oder starke Schwankungen dazukommen, hilft oft eine ruhigere Einordnung statt noch mehr Druck.</p>
+      <p><a href="m4.html">Zu komplexen Verläufen →</a></p>
+    </div>
+    <div class="lage-card">
+      <p class="lage-card-title">Ich merke, dass ich selbst kippe</p>
+      <p>Erschöpfung, Gereiztheit, Härte oder Distanzwunsch sind oft Warnsignale von Überlastung, nicht moralisches Versagen.</p>
+      <p><a href="m5.html">Zu Selbstschutz →</a></p>
+    </div>
+    <div class="lage-card">
+      <p class="lage-card-title">Ich will für die nächste Krise vorbereitet sein</p>
+      <p>Warnsignale, Kontakte und klare nächste Schritte vorab festhalten entlastet im Ernstfall spürbar.</p>
+      <p><a href="krisenplan.html">Zum Krisenplan →</a></p>
+    </div>
+  </div>
 </div>
 
 <div class="summary-block">
-<h2>Was im Umgang meist hilft</h2>
-<ul>
-<li>Ruhig, klar und in kleinen Schritten sprechen ist oft hilfreicher als lange Gespräche oder viele Ratschläge.</li>
-<li>Unterstützen heisst nicht steuern. Sie können anbieten, begleiten und ermutigen, aber nicht die Erkrankung für die andere Person lösen.</li>
-<li>Suizidgedanken direkt anzusprechen ist richtig. Es erhöht das Risiko nicht, sondern schafft eher Entlastung und Klarheit.</li>
-<li>Wenn Hilfe abgelehnt wird, ist eigene Beratung für Angehörige oft der nächste sinnvolle Schritt.</li>
-</ul>
+  <h2>Was Angehörige besonders häufig missverstehen</h2>
+  <ul>
+    <li>Rückzug, Gereiztheit oder Passivität bedeuten nicht automatisch Ablehnung. Oft sind sie Teil der Erkrankung oder Ausdruck von Überforderung.</li>
+    <li>Wenn das Verhalten sehr widersprüchlich, sprunghaft oder unübersichtlich wird, kann mehr als die Depression allein mitspielen.</li>
+    <li>Verständnis ersetzt auf Dauer keine Gegenseitigkeit. Lang andauernde Einseitigkeit kann Beziehungen erschöpfen, auch wenn Liebe bleibt.</li>
+    <li>Gut gemeinte Übernahme von Verantwortung entlastet kurzfristig, kann Angehörige aber auf Dauer erschöpfen, Rollen verschieben und Selbstschutz erschweren.</li>
+  </ul>
 </div>
 
 <div class="summary-block">
-<h2>Was Angehörige häufig missverstehen</h2>
-<ul>
-<li>Rückzug, Gereiztheit oder Passivität bedeuten nicht automatisch Ablehnung. Oft sind sie Teil der Erkrankung oder Ausdruck von Überforderung.</li>
-<li>Wenn das Verhalten sehr widersprüchlich, sprunghaft oder unübersichtlich wird, kann mehr als die Depression allein mitspielen.</li>
-<li>Verständnis ersetzt auf Dauer keine Gegenseitigkeit. Lang andauernde Einseitigkeit kann Beziehungen erschöpfen, auch wenn Liebe bleibt.</li>
-<li>Gut gemeinte Übernahme von Verantwortung entlastet kurzfristig, kann Angehörige aber auf Dauer erschöpfen, Rollen verschieben und Selbstschutz erschweren.</li>
-</ul>
+  <h2>Was im Umgang meist eher hilft</h2>
+  <ul>
+    <li>Ruhig, klar und in kleinen Schritten sprechen ist oft hilfreicher als lange Gespräche oder viele Ratschläge.</li>
+    <li>Unterstützen heisst nicht steuern. Sie können anbieten, begleiten und ermutigen, aber nicht die Erkrankung für die andere Person lösen.</li>
+    <li>Suizidgedanken direkt anzusprechen ist richtig. Es erhöht das Risiko nicht, sondern schafft eher Entlastung und Klarheit.</li>
+    <li>Wenn Hilfe abgelehnt wird, ist eigene Beratung für Angehörige oft kein Umweg, sondern der nächste sinnvolle Schritt.</li>
+  </ul>
 </div>
 
 <div class="summary-block">
-<h2>Woran Angehörige merken, dass es zu viel wird</h2>
-<ul>
-<li>Sie schlafen schlecht, kreisen ständig, werden gereizt, ziehen sich zurück oder funktionieren nur noch.</li>
-<li>Ihr Alltag verengt sich zunehmend auf die Erkrankung. Eigene Beziehungen, Arbeit, Erholung oder finanzielle Stabilität geraten unter Druck.</li>
-<li>Sie spüren Schuld, Wut, Abstumpfung, innere Härte oder den Wunsch, einfach nur noch weg zu sein. Auch das sind Warnsignale, nicht persönliches Versagen.</li>
-</ul>
+  <h2>Woran Angehörige merken, dass es für sie selbst zu viel wird</h2>
+  <ul>
+    <li>Sie schlafen schlecht, kreisen ständig, werden gereizt, ziehen sich zurück oder funktionieren nur noch.</li>
+    <li>Ihr Alltag verengt sich zunehmend auf die Erkrankung. Eigene Beziehungen, Arbeit, Erholung oder finanzielle Stabilität geraten unter Druck.</li>
+    <li>Sie spüren Schuld, Wut, Abstumpfung, innere Härte oder den Wunsch, einfach nur noch weg zu sein. Auch das sind Warnsignale, nicht persönliches Versagen.</li>
+  </ul>
 </div>
 
 <div class="summary-block">
-<h2>Wichtigste nächste Schritte</h2>
-<ol>
-<li>Bei akuter Gefahr sofort 144 oder 117 rufen. Die Person nicht allein lassen und wenn möglich gefährliche Mittel sichern.</li>
-<li>Wenn es nicht akut ist, aber Sie heute handeln müssen: zuerst telefonische Orientierung holen, statt weiter allein zu suchen.</li>
-<li>Wenn Sie selbst erschöpft oder blockiert sind, beginnen Sie mit Angehörigenberatung. Das ist kein Umweg.</li>
-<li>Wenn die betroffene Person keine Hilfe will, können Sie trotzdem handeln: Beobachtungen sammeln, Beratung holen, Kinder schützen und die Lage neu einordnen.</li>
-<li>Wenn die betroffene Person bereit ist, Hilfe anzunehmen, sind Hausarzt, psychiatrische Ambulanz oder Therapeutensuche oft die realistischsten ersten Wege.</li>
-</ol>
+  <h2>Drei erste Schritte, die heute oft sinnvoll sind</h2>
+  <div class="summary-steps">
+    <ol>
+      <li>Bei akuter Gefahr sofort 144 oder 117 rufen. Die Person nicht allein lassen und wenn möglich gefährliche Mittel sichern.</li>
+      <li>Wenn es nicht akut ist, aber Sie heute handeln müssen: zuerst telefonische Orientierung holen, statt weiter allein zu suchen.</li>
+      <li>Wenn Sie selbst erschöpft, blockiert oder überfordert sind, beginnen Sie mit Angehörigenberatung. Das ist kein Nebenschauplatz.</li>
+    </ol>
+  </div>
 </div>
 
 <div class="summary-block">
-<h2>Wichtigste Kontakte</h2>
-<ul>
-<li><strong>Akute Gefahr:</strong> 144 Sanität · 117 Polizei</li>
-<li><strong>Ärztefon Kanton Zürich:</strong> 0800 33 66 55</li>
-<li><strong>Dargebotene Hand:</strong> 143</li>
-<li><strong>PUK Angehörigenberatung:</strong> 058 384 20 00</li>
-<li><strong>Pro Mente Sana:</strong> 0848 800 858</li>
-</ul>
-</div>
-
-<div class="summary-block priority-box">
-<p style="font-weight:700;margin:0 0 .5rem;">Wenn nur drei Dinge hängen bleiben sollen:</p>
-<ol style="margin:0;padding-left:1.2rem;font-size:.95rem;line-height:1.7;">
-<li>Sie müssen das nicht allein tragen.</li>
-<li>Sie dürfen Hilfe auch für sich selbst holen — auch wenn die andere Person noch keinen Schritt macht.</li>
-<li>Bei grosser Sorge ist ein erster Kontakt oft wichtiger als die perfekte Entscheidung.</li>
-</ol>
+  <h2>Wichtige Kontakte</h2>
+  <ul>
+    <li><strong>Akute Gefahr:</strong> 144 Sanität · 117 Polizei</li>
+    <li><strong>Ärztefon Kanton Zürich:</strong> 0800 33 66 55</li>
+    <li><strong>Dargebotene Hand:</strong> 143</li>
+    <li><strong>PUK Angehörigenberatung:</strong> 058 384 20 00</li>
+    <li><strong>Pro Mente Sana:</strong> 0848 800 858</li>
+  </ul>
 </div>
 
 <p class="footer-print">
 PUK Zürich · Fachstelle Angehörigenarbeit · puk-depression-angehoerige.netlify.app · Stand: 03.2026<br>
-Diese Zusammenfassung ersetzt keine professionelle Beratung oder Behandlung.
+Diese Zusammenfassung bietet psychoedukative Orientierung für Angehörige und ersetzt keine professionelle Beratung oder Behandlung.
 </p>
 
 <script src="app.js" defer></script>

@@ -27,6 +27,24 @@
     line-height: 1.55;
 }
 
+.krisenplan-v2-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    list-style: none;
+    padding: 0;
+    margin: .9rem 0 0;
+}
+
+.krisenplan-v2-facts li {
+    padding: .35rem .7rem;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(245, 240, 235, .6);
+    font-size: .84rem;
+    color: var(--text);
+}
+
 .krisenplan-v2-backlink a {
     color: var(--m6);
     font-weight: 600;
@@ -43,6 +61,17 @@
     background: var(--danger-light);
     border-left-color: var(--danger-border);
     margin-bottom: 1.5rem;
+}
+
+.krisenplan-v2-orientation {
+    --module-color: var(--m6);
+    margin-bottom: 1.5rem;
+}
+
+.krisenplan-v2-orientation ul {
+    margin: .65rem 0 0;
+    padding-left: 1.2rem;
+    line-height: 1.6;
 }
 
 .krisenplan-v2-alert h2,
@@ -244,6 +273,10 @@
         padding-right: 1rem;
     }
 
+    .krisenplan-v2-facts {
+        gap: .4rem;
+    }
+
     .krisenplan-v2-contact-grid {
         grid-template-columns: 1fr;
     }
@@ -262,6 +295,10 @@
         display: none !important;
     }
 
+    .krisenplan-v2-facts {
+        margin-top: .55rem;
+    }
+
     body,
     .krisenplan-v2-page {
         background: #fff !important;
@@ -277,6 +314,7 @@
 
     .krisenplan-v2-header,
     .krisenplan-v2-alert,
+    .krisenplan-v2-orientation,
     .krisenplan-v2-group,
     .krisenplan-v2-contact,
     .krisenplan-v2-stage,
@@ -292,6 +330,7 @@
 
     .krisenplan-v2-header,
     .krisenplan-v2-alert,
+    .krisenplan-v2-orientation,
     .krisenplan-v2-section,
     .krisenplan-v2-footnote {
         margin-bottom: .8rem;
@@ -302,13 +341,15 @@
     }
 
     .krisenplan-v2-alert,
+    .krisenplan-v2-orientation,
     .krisenplan-v2-section {
         padding: .8rem 1rem;
     }
 
     .krisenplan-v2-section,
     .krisenplan-v2-actions,
-    .krisenplan-v2-alert {
+    .krisenplan-v2-alert,
+    .krisenplan-v2-orientation {
         break-inside: auto;
         page-break-inside: auto;
         box-shadow: none;

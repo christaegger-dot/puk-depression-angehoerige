@@ -1,4 +1,5 @@
-const STORAGE_KEY = "puk-krisenplan-v2";
+const STORAGE_KEY = "puk-krisenplan";
+const LEGACY_STORAGE_KEYS = ["puk-krisenplan-v2"];
 
 const warningGroups = [
     {
@@ -98,7 +99,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function loadPlan() {
     try {
-        const raw = localStorage.getItem(STORAGE_KEY);
+        let raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) {
+            const legacyKey = LEGACY_STORAGE_KEYS.find((key) => localStorage.getItem(key));
+            if (legacyKey) {
+                raw = localStorage.getItem(legacyKey);
+                if (raw) {
+                    localStorage.setItem(STORAGE_KEY, raw);
+                }
+            }
+        }
         if (!raw) return structuredClone(defaultData);
         const parsed = JSON.parse(raw);
         return {
@@ -119,7 +129,7 @@ function loadPlan() {
                 : structuredClone(defaultData.stufenplan),
         };
     } catch (error) {
-        console.error("[Krisenplan V2] Laden fehlgeschlagen:", error);
+        console.error("[Krisenplan] Laden fehlgeschlagen:", error);
         return structuredClone(defaultData);
     }
 }
@@ -288,7 +298,7 @@ function renderStages() {
         const textarea = document.createElement("textarea");
         textarea.rows = 4;
         textarea.value = state.stufenplan[index] || "";
-        textarea.placeholder = "Konkreter Schritt fuer diese Stufe";
+        textarea.placeholder = "Konkreter Schritt für diese Stufe";
         textarea.addEventListener("input", (event) => {
             state.stufenplan[index] = event.target.value;
             savePlan();
@@ -309,9 +319,10 @@ function bindButtons() {
 
     if (resetBtn) {
         resetBtn.addEventListener("click", () => {
-            const confirmed = window.confirm("Alle Eingaben in diesem Krisenplan wirklich loeschen?");
+            const confirmed = window.confirm("Alle Eingaben in diesem Krisenplan wirklich löschen?");
             if (!confirmed) return;
             localStorage.removeItem(STORAGE_KEY);
+            LEGACY_STORAGE_KEYS.forEach((key) => localStorage.removeItem(key));
             state = structuredClone(defaultData);
             renderWarningGroups();
             renderCopingList();
