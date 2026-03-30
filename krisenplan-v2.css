@@ -40,7 +40,7 @@
     padding: .35rem .7rem;
     border-radius: 999px;
     border: 1px solid var(--border);
-    background: rgba(245, 240, 235, .6);
+    background: var(--bg2);
     font-size: .84rem;
     color: var(--text);
 }
@@ -122,7 +122,7 @@
 .krisenplan-v2-group,
 .krisenplan-v2-contact,
 .krisenplan-v2-stage {
-    background: #fff;
+    background: var(--white);
     border: 1px solid var(--border);
     border-radius: calc(var(--radius) - 2px);
     padding: 1rem;
@@ -145,7 +145,7 @@
     gap: .7rem;
     padding: .65rem .75rem;
     border-radius: 8px;
-    background: rgba(245, 240, 235, .55);
+    background: var(--bg2);
 }
 
 .krisenplan-v2-check-item input {
@@ -182,7 +182,7 @@
     padding: .75rem .85rem;
     font: inherit;
     color: var(--text);
-    background: #fff;
+    background: var(--white);
 }
 
 .krisenplan-v2-field textarea,
@@ -265,6 +265,24 @@
 
 .krisenplan-v2-footnote p + p {
     margin-top: .5rem;
+}
+
+/* ── Dark mode support ──────────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+    .krisenplan-v2-group,
+    .krisenplan-v2-contact,
+    .krisenplan-v2-stage {
+        border-color: var(--border);
+    }
+    .krisenplan-v2-field input,
+    .krisenplan-v2-field textarea,
+    .krisenplan-v2-stage textarea {
+        border-color: var(--border);
+        color: var(--text);
+    }
+    .krisenplan-v2-tag {
+        border-color: var(--border);
+    }
 }
 
 @media (max-width: 600px) {
