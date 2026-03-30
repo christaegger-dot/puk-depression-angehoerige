@@ -541,7 +541,7 @@
     background: var(--border);
     border-radius: 1px;
 }
-.module-progress-label {
+{
     font-size: .78rem;
     color: var(--muted);
     margin-left: .5rem;
@@ -576,7 +576,7 @@
     margin-bottom: 1.5rem;
 }
 .hero-tag {
-    font-size: .78rem;
+    font-size: .84rem;
     font-weight: 600;
     padding: .3rem .75rem;
     border-radius: 20px;
@@ -600,7 +600,7 @@
 }
 .section-divider-line { flex: 1; height: 1px; background: var(--border); }
 .section-divider-label {
-    font-size: .78rem;
+    font-size: .84rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: .1em;
