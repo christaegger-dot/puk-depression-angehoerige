@@ -9,7 +9,7 @@
             --m1:#D24136; --m2:#1E656D; --m3:#EB8A3E; --m4:#3E6990; --m5:#A1BE95; --m6:#785A46;
 
             /* ── Abgeleitete Tokens (aus Kern-Palette berechnet) ── */
-            --safe-light:#ECF2E8;     /* Sage 12% auf Cotton */
+            --safe-light:#E4EFE0;     /* Sage 18% auf Cotton — etwas kräftiger für Quiz-Feedback */
             --safe-border:#7A9E6B;    /* Sage abgedunkelt */
             --safe-text:#3D5A31;      /* Sage stark abgedunkelt (WCAG AA auf safe-light) */
             --danger-light:#FDECEB;   /* Raspberry 8% auf Cotton */
@@ -525,7 +525,7 @@
     align-items: center;
 }
 .module-progress-dot {
-    width: 8px; height: 8px;
+    width: 10px; height: 10px;
     border-radius: 50%;
     background: var(--border);
     transition: background .2s, transform .2s;
