@@ -530,3 +530,30 @@ function initNavHighlight() {
         h.appendChild(btn);
     });
 })();
+
+/* ── Notfall-Banner: Single Source of Truth ─────────────────────────────── */
+(function() {
+    var BANNER_HTML =
+        '<span>\uD83D\uDEA8 Akute Gef\u00E4hr?</span>' +
+        '<a href="tel:144" style="color:#fff;font-weight:600;margin:0 .5rem;">144</a> Sanit\u00E4t |' +
+        '<a href="tel:117" style="color:#fff;font-weight:600;margin:0 .5rem;">117</a> Polizei' +
+        '<details class="notfall-details-wrap">' +
+            '<summary>Weitere Nummern</summary>' +
+            '<div class="notfall-extra">' +
+                '<p><strong>\u00C4rztlicher Notfalldienst (24h):</strong></p>' +
+                '<p>\u00C4rztefon \u2014 \u00C4rztlicher Notfalldienst Kt. Z\u00FCrich: <a href="tel:0800336655">0800 33 66 55</a></p>' +
+                '<p style="margin-top:.5rem;"><strong>Krisengespr\u00E4ch / emotionale Unterst\u00FCtzung:</strong></p>' +
+                '<p>Dargebotene Hand: <a href="tel:143">143</a> (24h, anonym, kostenlos)</p>' +
+                '<p style="margin-top:.5rem;"><strong>PUK Z\u00FCrich \u2014 Anmeldung &amp; Beratung:</strong></p>' +
+                '<p>Kinder &amp; Jugendliche: <a href="tel:+41583846666">058 384 66 66</a></p>' +
+                '<p>Erwachsene (ab 18): <a href="tel:+41583842000">058 384 20 00</a></p>' +
+                '<p>Erwachsene (ab 65): <a href="tel:+41583844682">058 384 46 82</a></p>' +
+                '<p style="margin-top:.5rem;font-size:.82rem;color:rgba(255,255,255,.85);">Sie k\u00F6nnen einfach sagen: \u00ABIch bin Angeh\u00F6rige*r und ich mache mir Sorgen um jemanden.\u00BB Mehr m\u00FCssen Sie im ersten Moment nicht wissen.</p>' +
+            '</div>' +
+        '</details>';
+
+    try {
+        var inner = document.querySelector('.notfall-banner-inner');
+        if (inner) inner.innerHTML = BANNER_HTML;
+    } catch(e) {}
+})();
