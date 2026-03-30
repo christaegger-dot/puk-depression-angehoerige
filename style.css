@@ -377,6 +377,31 @@
         .infografik-svg-wrap svg{display:block;max-width:100%;height:auto;}
         .infografik-footer{font-size:.78rem;color:var(--muted);margin-top:.75rem;padding-top:.5rem;border-top:1px solid var(--border);line-height:1.5;}
 
+        /* Eskalations-Kaskade */
+        .cascade{display:flex;flex-direction:column;margin:.75rem 0;}
+        .cascade-step{display:flex;align-items:flex-start;gap:1rem;position:relative;}
+        .cascade-step::before{content:'';position:absolute;left:19px;top:42px;width:2px;height:calc(100% - 10px);background:var(--cascade-color,var(--border));opacity:.35;}
+        .cascade-step:last-child::before{display:none;}
+        .cascade-badge{width:40px;height:40px;border-radius:50%;background:var(--cascade-color,var(--border));color:#fff;font-weight:700;font-size:1rem;display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;z-index:1;}
+        .cascade-content{padding:.5rem 0 1.4rem;flex:1;}
+        .cascade-title{font-weight:700;margin:0 0 .3rem;color:var(--cascade-color,var(--text));font-size:.95rem;}
+        .cascade-desc{font-size:.88rem;line-height:1.6;color:var(--text);margin:0;}
+        .cascade-desc a{color:var(--cascade-color,var(--m1));}
+        .cascade-step--green{--cascade-color:var(--safe-text);}
+        .cascade-step--warning{--cascade-color:var(--warning);}
+        .cascade-step--red{--cascade-color:var(--danger);}
+
+        /* Drei-Felder-Matrix */
+        .drei-felder{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;margin:.75rem 0;}
+        .drei-felder-col{border-radius:calc(var(--radius)/1.5);padding:.9rem 1rem;border-top:4px solid var(--field-color,var(--border));}
+        .drei-felder-col--gruen{--field-color:var(--safe-border);background:var(--safe-light);}
+        .drei-felder-col--orange{--field-color:var(--warning);background:var(--warning-light);}
+        .drei-felder-col--blau{--field-color:var(--info);background:rgba(30,101,109,.07);}
+        .drei-felder-label{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--field-color);margin-bottom:.4rem;display:block;}
+        .drei-felder-title{font-weight:700;font-size:.9rem;margin:0 0 .5rem;}
+        .drei-felder-list{margin:0;padding-left:1.1rem;font-size:.85rem;line-height:1.7;}
+        @media (max-width: 600px){.drei-felder{grid-template-columns:1fr;}}
+
         @media print{
             .notfall-banner,.main-nav,.font-toggle,.hamburger,.mobile-menu,.triage,#back-to-top,.krise-bottom-cta,.barometer-submit,.quiz-submit,.breadcrumb,.module-progress,.page-nav{display:none!important;}
             body{font-size:11pt;color:#000;background:#fff;line-height:1.6;}
