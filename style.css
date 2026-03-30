@@ -212,10 +212,17 @@
 
         .summary-link{display:inline-flex;align-items:center;gap:.5rem;padding:.68rem 1.2rem;background:var(--bg2);border:1px solid var(--border);border-radius:8px;color:var(--text);text-decoration:none;font-size:.9rem;font-weight:600;line-height:1.35;transition:background-color .2s,border-color .2s,color .2s;}
         .summary-link:hover,.summary-link:focus{background:#eae8e4;border-color:var(--border);color:var(--text);}
-        #notfall-fab{bottom:1rem!important;right:1rem!important;}
-        .nf-toggle-btn{width:48px!important;height:48px!important;font-size:1.2rem!important;box-shadow:0 3px 12px rgba(198,40,40,.26)!important;transition:transform .12s ease,box-shadow .18s ease!important;}
-        .nf-toggle-btn:hover,.nf-toggle-btn:focus{transform:scale(1.03);box-shadow:0 5px 14px rgba(198,40,40,.3)!important;}
-        @media (max-width:767px){#notfall-fab{bottom:5rem!important;right:.85rem!important;}.nf-toggle-btn{width:46px!important;height:46px!important;font-size:1.12rem!important;}}
+        #notfall-fab{bottom:1rem;right:1rem;}
+        .nf-toggle-btn{
+            width:52px;height:52px;border-radius:50%;
+            background:var(--danger);color:#fff;border:none;cursor:pointer;
+            font-size:1.4rem;
+            box-shadow:0 4px 16px rgba(198,40,40,.4);
+            display:flex;align-items:center;justify-content:center;
+            transition:transform .15s ease,box-shadow .18s ease;
+        }
+        .nf-toggle-btn:hover,.nf-toggle-btn:focus{transform:scale(1.03);box-shadow:0 5px 14px rgba(198,40,40,.3);}
+        @media (max-width:767px){#notfall-fab{bottom:5rem;right:.85rem;}.nf-toggle-btn{width:46px;height:46px;font-size:1.12rem;}}
 
         /* Icons */
         .icon{display:inline-flex;align-items:center;justify-content:center;}
@@ -515,6 +522,41 @@
 }
 .page-nav-btn.primary:hover { opacity: .88; }
 
+/* ── Back-to-top button ─────────────────────────────────────────────────── */
+#back-to-top {
+    position: fixed;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--module-color, var(--m1));
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    z-index: 700;
+}
+
+/* ── Download link button ───────────────────────────────────────────────── */
+.download-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .5rem 1rem;
+    background: var(--module-color, var(--m1));
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 500;
+}
+.download-link:hover, .download-link:focus { opacity: .88; color: #fff; }
+
 /* Modul-Fortschrittsleiste */
 .module-progress {
     max-width: var(--max-width);
@@ -618,17 +660,20 @@
     cursor:pointer;
     font-size:.9rem;
 }
-.download-link-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:.4rem;
-    padding:.5rem 1rem;
-    color:#fff;
-    border-radius:6px;
-    text-decoration:none;
-    font-size:.9rem;
-    font-weight:600;
+/* .download-link-btn is an alias for .download-link — see .download-link definition above */
+.download-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .4rem;
+    padding: .5rem 1rem;
+    background: var(--module-color, var(--m1));
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 600;
 }
+.download-link-btn:hover, .download-link-btn:focus { opacity: .88; color: #fff; }
 .krisenplan-intro{
     max-width:800px;
     margin:0 auto;
