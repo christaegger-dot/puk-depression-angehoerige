@@ -225,23 +225,27 @@
 
 .krisenplan-v2-btn {
     border: none;
-    border-radius: 10px;
+    border-radius: var(--radius, 12px);
     padding: .9rem 1.1rem;
     font: inherit;
     font-weight: 600;
     cursor: pointer;
+    transition: opacity .2s, box-shadow .2s;
 }
 
 .krisenplan-v2-btn-primary {
     background: var(--m6);
     color: #fff;
+    box-shadow: 0 2px 8px rgba(120,90,70,.25);
 }
+.krisenplan-v2-btn-primary:hover, .krisenplan-v2-btn-primary:focus { opacity: .88; }
 
 .krisenplan-v2-btn-secondary {
     background: transparent;
     color: var(--text);
     border: 1px solid var(--border);
 }
+.krisenplan-v2-btn-secondary:hover, .krisenplan-v2-btn-secondary:focus { background: var(--bg2); }
 
 .krisenplan-v2-status {
     margin-top: .9rem;
