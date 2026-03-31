@@ -461,6 +461,10 @@
         .flow-item a{color:var(--item-color);}
         @media (max-width:580px){.flow-branches{grid-template-columns:1fr;}}
 
+        /* Responsive 2-col utility */
+        .grid-2col{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+        @media(max-width:540px){.grid-2col{grid-template-columns:1fr;}}
+
         @media print{
             .notfall-banner,.main-nav,.font-toggle,.hamburger,.mobile-menu,.triage,#back-to-top,.krise-bottom-cta,.barometer-submit,.quiz-submit,.breadcrumb,.module-progress,.page-nav{display:none!important;}
             body{font-size:11pt;color:#000;background:#fff;line-height:1.6;}

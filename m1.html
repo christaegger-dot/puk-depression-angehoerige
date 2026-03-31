@@ -216,10 +216,10 @@
         <p>Stellen Sie sich ein Fass vor. Jeder Mensch hat ein Fass — es steht für die Belastbarkeit. Manche Fässer sind von Geburt an kleiner (genetische Veranlagung, frühe Erfahrungen). Das Fass füllt sich durch Stress: Konflikte, Verluste, Überlastung, Einsamkeit. Solange das Fass nicht überläuft, bleibt der Mensch gesund. Wenn es überläuft, kann eine Depression entstehen.</p>
 
         <!-- INTERAKTIV: Fass-Modell mit Slider -->
-        <div style="background:#f7f5f2;border:1px solid var(--border,#e2e0dc);border-radius:12px;padding:1.5rem;margin:1.5rem 0;">
+        <div style="background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin:1.5rem 0;">
             <p class="section-label" style="color:var(--m1);margin-bottom:.75rem;">Interaktiv: Das Fass-Modell</p>
             <div style="display:flex;align-items:flex-end;gap:2rem;flex-wrap:wrap;justify-content:center;">
-                <div style="position:relative;width:120px;height:180px;border:3px solid #5a7a9a;border-top:none;border-radius:0 0 12px 12px;overflow:hidden;background:#fff;">
+                <div style="position:relative;width:120px;height:180px;border:3px solid var(--m1);border-top:none;border-radius:0 0 12px 12px;overflow:hidden;background:var(--white);">
                     <div id="fass-fill" style="position:absolute;bottom:0;width:100%;height:30%;background:linear-gradient(to top,#3a8fd4,#7ab8e8);transition:height .5s ease;border-radius:0 0 9px 9px;"></div>
                     <div id="fass-overflow" style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);font-size:1.2rem;opacity:0;transition:opacity .3s;">💧</div>
                     <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:.7rem;font-weight:600;color:#1a3a5a;text-align:center;z-index:2;pointer-events:none;" id="fass-label">Belastung</div>
@@ -336,10 +336,10 @@
         <p>Depression wird oft mit Traurigkeit, Weinen und Rückzug assoziiert. Bei Männern zeigt sie sich aber häufig anders — und wird deshalb oft nicht erkannt, weder von den Betroffenen noch von ihren Angehörigen.</p>
 
         <!-- INTERAKTIV: Vergleichs-Karten -->
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0;" role="list">
-            <div style="background:#f0f4f8;border:1px solid #c8d8e8;border-radius:10px;padding:1.2rem;" role="listitem">
+        <div class="grid-2col" style="margin:1.5rem 0;">
+            <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.2rem;border-left:4px solid var(--m1);">
                 <p style="font-weight:700;font-size:.9rem;color:var(--m1);margin-bottom:.5rem;">«Typische» Symptome</p>
-                <p style="font-size:.85rem;color:#6a6a6a;margin-bottom:.5rem;">Werden oft erkannt:</p>
+                <p style="font-size:.85rem;color:var(--muted);margin-bottom:.5rem;">Werden oft erkannt:</p>
                 <ul style="font-size:.88rem;padding-left:1.1rem;margin:0;">
                     <li>Anhaltende Traurigkeit, Weinen</li>
                     <li>Rückzug und Isolation</li>
@@ -348,9 +348,9 @@
                     <li>Schlafstörungen (zu viel Schlaf)</li>
                 </ul>
             </div>
-            <div style="background:#fff8f0;border:1px solid #e8d0b0;border-radius:10px;padding:1.2rem;" role="listitem">
-                <p style="font-weight:700;font-size:.9rem;color:#b8700b;margin-bottom:.5rem;">Häufig bei Männern</p>
-                <p style="font-size:.85rem;color:#6a6a6a;margin-bottom:.5rem;">Werden oft übersehen:</p>
+            <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1.2rem;border-left:4px solid var(--warning);">
+                <p style="font-weight:700;font-size:.9rem;color:var(--warning);margin-bottom:.5rem;">Häufig bei Männern</p>
+                <p style="font-size:.85rem;color:var(--muted);margin-bottom:.5rem;">Werden oft übersehen:</p>
                 <ul style="font-size:.88rem;padding-left:1.1rem;margin:0;">
                     <li>Reizbarkeit, Wutausbrüche, Aggression</li>
                     <li>Exzessives Arbeiten oder Sport</li>
