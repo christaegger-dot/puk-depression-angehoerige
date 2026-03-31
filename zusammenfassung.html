@@ -7,13 +7,29 @@
 <meta name="description" content="Eine priorisierte Kompassseite für Angehörige: Notfallnummern, erste Schritte, Warnsignale und klare Orientierung zum Ausdrucken oder Teilen.">
 <link rel="canonical" href="https://puk-depression-angehoerige.netlify.app/zusammenfassung.html">
 <style>
+:root {
+  --z-bg:#F9F9FF; --z-bg2:#f7f5f2; --z-white:#fff;
+  --z-text:#1a2a3a; --z-muted:#5c6c79; --z-subtle:#314252;
+  --z-accent:#00618A; --z-border:#e2e0dc;
+  --z-card-bg:#fff; --z-card-border:#dde2e8;
+  --z-footer:#6f7b86;
+}
+@media (prefers-color-scheme:dark) {
+  :root {
+    --z-bg:#0d1f2e; --z-bg2:#0a1825; --z-white:#0d2535;
+    --z-text:#ddeaf5; --z-muted:#8aa4ba; --z-subtle:#b0c8d8;
+    --z-accent:#5dbde0; --z-border:#1e3a50;
+    --z-card-bg:#0d2535; --z-card-border:#1e3a50;
+    --z-footer:#6a8fa8;
+  }
+}
 @media screen {
-  body { font-family: 'Source Sans 3', system-ui, sans-serif; max-width: 880px; margin: 0 auto; padding: 2rem 1rem 3rem; color: #1a2a3a; background: #F9F9FF; }
-  .back-link { display: inline-block; margin-bottom: 1rem; color: #00618A; font-size: .92rem; font-weight: 600; }
+  body { font-family: 'Source Sans 3', system-ui, sans-serif; max-width: 880px; margin: 0 auto; padding: 2rem 1rem 3rem; color: var(--z-text); background: var(--z-bg); }
+  .back-link { display: inline-block; margin-bottom: 1rem; color: var(--z-accent); font-size: .92rem; font-weight: 600; }
   .summary-toolbar { display:flex; gap:.75rem; flex-wrap:wrap; margin-bottom:1.5rem; }
   .print-btn, .tool-link { display:inline-flex; align-items:center; gap:.5rem; border-radius:8px; padding:.78rem 1.1rem; font-size:.95rem; font-weight:600; text-decoration:none; cursor:pointer; }
-  .print-btn { background:#00618A; color:#fff; border:none; }
-  .tool-link { background:#fff; border:1px solid #d7dbe0; color:#1a2a3a; }
+  .print-btn { background:var(--z-accent); color:#fff; border:none; }
+  .tool-link { background:var(--z-white); border:1px solid var(--z-border); color:var(--z-text); }
   .print-btn:hover, .tool-link:hover { opacity:.9; }
 }
 @media print {
@@ -26,29 +42,33 @@
 * { box-sizing: border-box; }
 body { line-height:1.6; }
 h1 { font-family: 'Lora', Georgia, serif; font-size: 1.9rem; line-height:1.2; margin: 0 0 .5rem; }
-.summary-eyebrow { font-size:.76rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#00618A; margin:0 0 .45rem; }
-.subtitle { color: #5c6c79; font-size: 1rem; margin: 0 0 1rem; }
-.summary-intro { font-size:.97rem; color:#314252; margin:0 0 1.35rem; }
+.summary-eyebrow { font-size:.76rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--z-accent); margin:0 0 .45rem; }
+.subtitle { color: var(--z-muted); font-size: 1rem; margin: 0 0 1rem; }
+.summary-intro { font-size:.97rem; color:var(--z-subtle); margin:0 0 1.35rem; }
 .summary-hero { margin-bottom:1.6rem; }
 .notfall-box { background: #FDECEB; border: 1px solid #D24136; border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1.5rem; }
 .notfall-box p { margin: .25rem 0; font-size: .92rem; }
 .notfall-box strong { color: #7A1F1A; }
-.priority-box { background:#f7f5f2; border:1px solid #e4ddd5; border-radius:10px; padding:1rem 1.2rem; margin:0 0 1.5rem; }
+@media (prefers-color-scheme:dark) {
+  .notfall-box { background:rgba(237,87,82,.12); border-color:#ED5752; }
+  .notfall-box strong { color:#f5a09d; }
+}
+.priority-box { background:var(--z-bg2); border:1px solid var(--z-border); border-radius:10px; padding:1rem 1.2rem; margin:0 0 1.5rem; }
 .priority-box p { margin:.25rem 0; }
 .priority-box ol { margin:.5rem 0 0; padding-left:1.2rem; font-size:.95rem; }
 .summary-block { margin-bottom:1.35rem; }
-h2 { font-family: 'Lora', Georgia, serif; font-size: 1.02rem; font-weight: 700; color: #00618A; border-bottom: 2px solid #e2e0dc; padding-bottom: .3rem; margin: 1.5rem 0 .6rem; }
+h2 { font-family: 'Lora', Georgia, serif; font-size: 1.02rem; font-weight: 700; color: var(--z-accent); border-bottom: 2px solid var(--z-border); padding-bottom: .3rem; margin: 1.5rem 0 .6rem; }
 .summary-block ul, .summary-block ol { margin: .35rem 0 0.9rem; padding-left: 1.2rem; font-size: .93rem; line-height: 1.65; }
 .summary-block p { font-size: .94rem; line-height: 1.65; margin: .35rem 0 .75rem; }
 .lage-grid { display:grid; grid-template-columns:1fr 1fr; gap:.8rem; margin:1rem 0 1.4rem; }
-.lage-card { background:#fff; border:1px solid #dde2e8; border-radius:10px; padding:1rem; }
-.lage-card-title { font-weight:700; margin:0 0 .25rem; color:#1f3a4e; }
-.lage-card p { margin:.2rem 0; font-size:.92rem; color:#314252; }
-.lage-card a { color:#00618A; font-weight:600; text-decoration:none; }
-.summary-steps { background:#fff; border:1px solid #dde2e8; border-radius:10px; padding:1rem 1.1rem; }
+.lage-card { background:var(--z-card-bg); border:1px solid var(--z-card-border); border-radius:10px; padding:1rem; }
+.lage-card-title { font-weight:700; margin:0 0 .25rem; color:var(--z-text); }
+.lage-card p { margin:.2rem 0; font-size:.92rem; color:var(--z-subtle); }
+.lage-card a { color:var(--z-accent); font-weight:600; text-decoration:none; }
+.summary-steps { background:var(--z-card-bg); border:1px solid var(--z-card-border); border-radius:10px; padding:1rem 1.1rem; }
 .summary-steps ol { margin:.3rem 0 0; padding-left:1.2rem; }
 .summary-steps li + li { margin-top:.45rem; }
-.footer-print { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #e2e0dc; font-size: .82rem; color: #6f7b86; }
+.footer-print { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--z-border); font-size: .82rem; color: var(--z-footer); }
 @media (max-width: 600px) {
   .lage-grid { grid-template-columns:1fr; }
   h1 { font-size:1.65rem; }

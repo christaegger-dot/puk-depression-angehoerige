@@ -220,9 +220,9 @@
             <p class="section-label" style="color:var(--m1);margin-bottom:.75rem;">Interaktiv: Das Fass-Modell</p>
             <div style="display:flex;align-items:flex-end;gap:2rem;flex-wrap:wrap;justify-content:center;">
                 <div style="position:relative;width:120px;height:180px;border:3px solid var(--m1);border-top:none;border-radius:0 0 12px 12px;overflow:hidden;background:var(--white);">
-                    <div id="fass-fill" style="position:absolute;bottom:0;width:100%;height:30%;background:linear-gradient(to top,#3a8fd4,#7ab8e8);transition:height .5s ease;border-radius:0 0 9px 9px;"></div>
+                    <div id="fass-fill" style="position:absolute;bottom:0;width:100%;height:30%;background:linear-gradient(to top,var(--m4,#3a8fd4),#7ab8e8);transition:height .5s ease;border-radius:0 0 9px 9px;"></div>
                     <div id="fass-overflow" style="position:absolute;top:-8px;left:50%;transform:translateX(-50%);font-size:1.2rem;opacity:0;transition:opacity .3s;">💧</div>
-                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:.7rem;font-weight:600;color:#1a3a5a;text-align:center;z-index:2;pointer-events:none;" id="fass-label">Belastung</div>
+                    <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:.7rem;font-weight:600;color:var(--text);text-align:center;z-index:2;pointer-events:none;" id="fass-label">Belastung</div>
                 </div>
                 <div style="flex:1;min-width:200px;">
                     <label style="font-size:.85rem;font-weight:600;color:#5a7a9a;">Stresslevel verschieben:</label>
@@ -245,16 +245,16 @@
           <div class="infografik-svg-wrap">
             <svg viewBox="0 0 580 270" xmlns="http://www.w3.org/2000/svg" aria-label="Drei Fässer mit gleichem Stressinput; kleines Fass läuft über, mittleres ist fast voll, grosses hat noch Puffer" role="img">
               <defs>
-                <marker id="dropA" markerWidth="6" markerHeight="6" refX="3" refY="3"><circle cx="3" cy="3" r="2.5" fill="#3a8fd4" opacity=".7"/></marker>
+                <marker id="dropA" markerWidth="6" markerHeight="6" refX="3" refY="3"><circle cx="3" cy="3" r="2.5" fill="var(--m4,#3a8fd4)" opacity=".7"/></marker>
               </defs>
               <!-- Labels oben: Stress-Tropfen -->
               <text x="88" y="22" text-anchor="middle" font-size="11" fill="#888">↓ Stress</text>
               <text x="290" y="22" text-anchor="middle" font-size="11" fill="#888">↓ Stress</text>
               <text x="492" y="22" text-anchor="middle" font-size="11" fill="#888">↓ Stress</text>
               <!-- Drop arrows -->
-              <line x1="88" y1="28" x2="88" y2="50" stroke="#3a8fd4" stroke-width="1.5" stroke-dasharray="3 2"/>
-              <line x1="290" y1="28" x2="290" y2="50" stroke="#3a8fd4" stroke-width="1.5" stroke-dasharray="3 2"/>
-              <line x1="492" y1="28" x2="492" y2="50" stroke="#3a8fd4" stroke-width="1.5" stroke-dasharray="3 2"/>
+              <line x1="88" y1="28" x2="88" y2="50" stroke="var(--m4,#3a8fd4)" stroke-width="1.5" stroke-dasharray="3 2"/>
+              <line x1="290" y1="28" x2="290" y2="50" stroke="var(--m4,#3a8fd4)" stroke-width="1.5" stroke-dasharray="3 2"/>
+              <line x1="492" y1="28" x2="492" y2="50" stroke="var(--m4,#3a8fd4)" stroke-width="1.5" stroke-dasharray="3 2"/>
 
               <!-- FASS 1: Klein (hohes Risiko) -->
               <!-- Barrel body: x=48, y=55, w=80, h=105 -->
