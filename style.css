@@ -402,6 +402,65 @@
         .drei-felder-list{margin:0;padding-left:1.1rem;font-size:.85rem;line-height:1.7;}
         @media (max-width: 600px){.drei-felder{grid-template-columns:1fr;}}
 
+        /* Behandlungs-Matrix */
+        .beh-matrix-wrap{overflow-x:auto;margin:.75rem 0;}
+        .beh-matrix{width:100%;border-collapse:collapse;font-size:.86rem;}
+        .beh-matrix th,.beh-matrix td{padding:.5rem .65rem;border:1px solid var(--border);}
+        .beh-matrix th{background:var(--bg2);font-weight:700;font-size:.79rem;text-transform:uppercase;letter-spacing:.04em;text-align:center;}
+        .beh-matrix th:first-child{text-align:left;}
+        .beh-matrix td.row-label{font-weight:600;background:var(--bg2);font-size:.82rem;}
+        .beh-matrix td:not(.row-label){text-align:center;}
+        .beh-ja{color:var(--safe-text);font-weight:700;font-size:.95rem;}
+        .beh-opt{color:var(--warning);font-weight:600;}
+        .beh-nein{color:var(--muted);opacity:.55;}
+        .beh-matrix tr:nth-child(even) td:not(.row-label){background:rgba(0,0,0,.025);}
+        .beh-th-leicht{color:var(--safe-text);}
+        .beh-th-mittel{color:var(--warning);}
+        .beh-th-schwer{color:var(--danger);}
+
+        /* Alarm-Level (Suizid) */
+        .alarm-levels{display:flex;flex-direction:column;gap:.55rem;margin:.75rem 0;}
+        .alarm-level{display:grid;grid-template-columns:44px 1fr;align-items:start;gap:.75rem;padding:.85rem 1rem;border-radius:var(--radius);border-left:5px solid var(--level-color,var(--border));}
+        .alarm-level--gelb{--level-color:#b8860b;background:rgba(212,175,55,.08);}
+        .alarm-level--orange{--level-color:var(--warning);background:var(--warning-light);}
+        .alarm-level--rot{--level-color:var(--danger);background:var(--danger-light);}
+        .alarm-badge{width:36px;height:36px;border-radius:50%;background:var(--level-color);color:#fff;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;margin-top:.1rem;}
+        .alarm-level-title{font-weight:700;margin:0 0 .2rem;color:var(--level-color);font-size:.92rem;}
+        .alarm-level-body{font-size:.85rem;line-height:1.55;color:var(--text);margin:0 0 .3rem;}
+        .alarm-level-body li{margin-bottom:.2rem;}
+        .alarm-level-action{font-size:.82rem;font-weight:700;color:var(--level-color);margin:0;}
+
+        /* Tragfähigkeits-Ampel */
+        .trag-ampel{display:grid;grid-template-columns:repeat(4,1fr);gap:.55rem;margin:.75rem 0;}
+        .trag-col{border-radius:calc(var(--radius)/1.5);overflow:hidden;border:1px solid var(--border);}
+        .trag-col-head{padding:.55rem .6rem;font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;text-align:center;color:#fff;background:var(--col-color);}
+        .trag-col--k{--col-color:#4a7a5a;}
+        .trag-col--e{--col-color:#6a5a9a;}
+        .trag-col--s{--col-color:#3a7a94;}
+        .trag-col--a{--col-color:#8a6a2a;}
+        .trag-col-body{background:var(--bg2);padding:.6rem .7rem;}
+        .trag-col-body ul{margin:0;padding-left:1rem;font-size:.8rem;line-height:1.65;color:var(--text);}
+        @media (max-width:600px){.trag-ampel{grid-template-columns:1fr 1fr;}}
+        @media (max-width:380px){.trag-ampel{grid-template-columns:1fr;}}
+
+        /* Flowchart (Entscheidungsbaum) */
+        .flowchart{margin:.75rem 0;font-size:.87rem;}
+        .flow-start{background:var(--module-color,var(--m6));border-radius:var(--radius);padding:.75rem 1.1rem;color:#fff;font-weight:700;text-align:center;margin-bottom:.4rem;}
+        .flow-arrow{text-align:center;color:var(--muted);line-height:1;margin:.2rem 0;font-size:1.1rem;}
+        .flow-branches{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin:.2rem 0;}
+        .flow-branch{border-left:3px solid var(--branch-color,var(--border));padding:.75rem .75rem .75rem .9rem;border-radius:0 var(--radius) var(--radius) 0;background:var(--bg2);}
+        .flow-branch--betroffene{--branch-color:var(--danger);}
+        .flow-branch--ich{--branch-color:var(--safe-border);}
+        .flow-branch-title{font-weight:700;font-size:.85rem;color:var(--branch-color);margin:0 0 .6rem;}
+        .flow-item{padding:.5rem .65rem;border-radius:calc(var(--radius)/2);margin-bottom:.35rem;font-size:.83rem;border-left:3px solid var(--item-color,var(--border));}
+        .flow-item--rot{--item-color:var(--danger);background:var(--danger-light);}
+        .flow-item--orange{--item-color:var(--warning);background:var(--warning-light);}
+        .flow-item--gruen{--item-color:var(--safe-border);background:var(--safe-light);}
+        .flow-item-label{font-weight:700;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--item-color);display:block;margin-bottom:.15rem;}
+        .flow-item p{margin:0;line-height:1.45;}
+        .flow-item a{color:var(--item-color);}
+        @media (max-width:580px){.flow-branches{grid-template-columns:1fr;}}
+
         @media print{
             .notfall-banner,.main-nav,.font-toggle,.hamburger,.mobile-menu,.triage,#back-to-top,.krise-bottom-cta,.barometer-submit,.quiz-submit,.breadcrumb,.module-progress,.page-nav{display:none!important;}
             body{font-size:11pt;color:#000;background:#fff;line-height:1.6;}

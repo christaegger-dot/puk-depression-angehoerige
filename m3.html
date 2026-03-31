@@ -210,6 +210,64 @@
                 </div>
             </div>
         </div>
+        <div class="infografik-container" style="--module-color:var(--m3);margin-top:1.25rem;">
+          <span class="infografik-label">Visualisierung · Modul 3</span>
+          <p class="infografik-title">Rollenverlauf — wie Beziehungsgleichgewicht sich verändert</p>
+          <p class="infografik-subtitle">Zwei mögliche Verläufe über die Zeit: mit früher Unterstützung bleibt die Beziehung lebendig; ohne Schutz driftet sie in eine einseitige Pflegerolle.</p>
+          <div class="infografik-svg-wrap">
+            <svg viewBox="0 0 580 230" xmlns="http://www.w3.org/2000/svg" aria-label="Zwei Kurven zeigen den Rollenverlauf: mit Unterstützung erholt sich die Beziehung, ohne Unterstützung sinkt sie in eine Pflegerolle ab" role="img">
+              <!-- Grid -->
+              <line x1="60" y1="20" x2="60" y2="180" stroke="#d0c8b8" stroke-width="1"/>
+              <line x1="60" y1="180" x2="550" y2="180" stroke="#d0c8b8" stroke-width="1"/>
+              <!-- Y-axis labels -->
+              <text x="8" y="30" font-size="9.5" fill="#888" text-anchor="start">Partner­schaft</text>
+              <text x="8" y="95" font-size="9.5" fill="#888" text-anchor="start">Asymmetrie</text>
+              <text x="8" y="175" font-size="9.5" fill="#888" text-anchor="start">Pflegerolle</text>
+              <!-- Y-axis dashes -->
+              <line x1="55" y1="28" x2="60" y2="28" stroke="#d0c8b8" stroke-width="1"/>
+              <line x1="55" y1="90" x2="60" y2="90" stroke="#d0c8b8" stroke-width="1"/>
+              <line x1="55" y1="175" x2="60" y2="175" stroke="#d0c8b8" stroke-width="1"/>
+              <!-- X-axis labels -->
+              <text x="60" y="198" font-size="9.5" fill="#888" text-anchor="middle">Erkrankungs­beginn</text>
+              <text x="200" y="198" font-size="9.5" fill="#888" text-anchor="middle">6 Monate</text>
+              <text x="350" y="198" font-size="9.5" fill="#888" text-anchor="middle">1 Jahr</text>
+              <text x="500" y="198" font-size="9.5" fill="#888" text-anchor="middle">2+ Jahre</text>
+              <!-- X-axis tick marks -->
+              <line x1="200" y1="180" x2="200" y2="185" stroke="#d0c8b8" stroke-width="1"/>
+              <line x1="350" y1="180" x2="350" y2="185" stroke="#d0c8b8" stroke-width="1"/>
+              <line x1="500" y1="180" x2="500" y2="185" stroke="#d0c8b8" stroke-width="1"/>
+
+              <!-- Line A: Mit Unterstützung (green) — dips then recovers -->
+              <polyline points="60,45 200,110 280,130 350,100 450,70 530,48"
+                fill="none" stroke="#4a7a5a" stroke-width="2.5" stroke-linejoin="round"/>
+              <!-- Dots on line A -->
+              <circle cx="60" cy="45" r="4" fill="#4a7a5a"/>
+              <circle cx="280" cy="130" r="4" fill="#4a7a5a"/>
+              <circle cx="530" cy="48" r="4" fill="#4a7a5a"/>
+              <!-- Label A -->
+              <text x="535" y="44" font-size="10" font-weight="700" fill="#4a7a5a">Mit Unterstützung</text>
+
+              <!-- Line B: Ohne Unterstützung (orange) — steadily drifts down -->
+              <polyline points="60,45 200,115 300,148 400,163 500,172 530,176"
+                fill="none" stroke="#EB8A3E" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="6 3"/>
+              <!-- Dots on line B -->
+              <circle cx="60" cy="45" r="4" fill="#EB8A3E"/>
+              <circle cx="400" cy="163" r="4" fill="#EB8A3E"/>
+              <circle cx="530" cy="176" r="4" fill="#EB8A3E"/>
+              <!-- Label B -->
+              <text x="535" y="172" font-size="10" font-weight="700" fill="#c97030">Ohne Schutz</text>
+
+              <!-- Annotation: tipping point -->
+              <line x1="280" y1="130" x2="280" y2="155" stroke="#888" stroke-width="1" stroke-dasharray="3 2"/>
+              <text x="285" y="165" font-size="9" fill="#666">Kipppunkt</text>
+
+              <!-- Annotation: recovery -->
+              <line x1="380" y1="85" x2="380" y2="65" stroke="#4a7a5a" stroke-width="1" stroke-dasharray="3 2"/>
+              <text x="385" y="62" font-size="9" fill="#4a7a5a">Beziehung lebt</text>
+            </svg>
+          </div>
+          <p class="infografik-footer">Asymmetrie ist in Phasen normal. Wenn sie über Monate anhält und keine eigene Unterstützung dazukommt, wird aus Verständnis Erschöpfung. Frühzeitige Beratung kann den Kipppunkt hinauszögern oder vermeiden.</p>
+        </div>
         <details class="reflexion">
             <summary class="reflexion-trigger">Moment der Reflexion: Wo ist Gegenseitigkeit kleiner geworden?</summary>
             <div class="reflexion-content">
