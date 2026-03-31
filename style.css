@@ -465,6 +465,15 @@
         .grid-2col{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
         @media(max-width:540px){.grid-2col{grid-template-columns:1fr;}}
 
+        /* Reusable card-item: divider row inside .card */
+        .card-item{padding:.75rem 0;border-bottom:1px solid rgba(0,0,0,.08);}
+        .card-item:last-child{border-bottom:none;padding-bottom:0;}
+        .card-item-title{font-weight:700;margin-bottom:.3rem;}
+
+        /* Download button */
+        .download-link{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;background:var(--module-color,var(--m1));color:#fff;border-radius:6px;text-decoration:none;font-size:.9rem;font-weight:500;transition:opacity .15s;}
+        .download-link:hover,.download-link:focus{opacity:.85;}
+
         @media print{
             .notfall-banner,.main-nav,.font-toggle,.hamburger,.mobile-menu,.triage,#back-to-top,.krise-bottom-cta,.barometer-submit,.quiz-submit,.breadcrumb,.module-progress,.page-nav{display:none!important;}
             body{font-size:11pt;color:#000;background:#fff;line-height:1.6;}
